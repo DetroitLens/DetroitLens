@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Detroit Lens | Professional Real Estate Photography Metro Detroit</title>
+    <meta name="description" content="Premium real estate photography services in Metro Detroit. Specializing in residential, twilight, and drone photography for real estate agents and property managers.">
+    <meta name="keywords" content="real estate photography, Detroit photographer, twilight photos, drone photography, property photos, real estate marketing">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Detroit Lens | Real Estate Photography">
+    <meta property="og:description" content="Elevate your listings with professional real estate photography in Metro Detroit">
+    <meta property="og:type" content="website">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =====================
+           GLOBAL STYLES
+        ===================== */
+        :root {
+            --gradient-blue: #00e5ff;
+            --gradient-purple: #ff00ff;
+            --gradient-orange: #ff8f00;
+            --bg-dark: #000;
+            --text-light: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-dark);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* =====================
+           HERO SECTION
+        ===================== */
+        .hero-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(0, 229, 255, 0.1) 0%,
+                rgba(255, 0, 255, 0.1) 45%,
+                rgba(255, 143, 0, 0.1) 100%
+            );
+            opacity: 0.4;
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            transform-origin: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* Apple Neon Gradient Glow Effect */
+        .glow-text {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .glow-text::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                var(--gradient-blue) 0%,
+                var(--gradient-blue) 10%,
+                var(--gradient-purple) 45%,
+                var(--gradient-orange) 80%,
+                var(--gradient-orange) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: blur(8px) brightness(0.7);
+            z-index: 1;
+        }
+
+        .glow-text span {
+            background: linear-gradient(
+                90deg,
+                var(--gradient-blue) 0%,
+                var(--gradient-blue) 10%,
+                var(--gradient-purple) 45%,
+                var(--gradient-orange) 80%,
+                var(--gradient-orange) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            z-index: 2;
+            filter: brightness(1.2);
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        /* =====================
+           ANIMATIONS
+        ===================== */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* =====================
+           RESPONSIVE DESIGN
+        ===================== */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-container">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="glow-text" data-text="DETROIT LENS">
+                <span>DETROIT LENS</span>
+            </div>
+            <div class="tagline">ELEVATE YOUR LISTINGS. AMPLIFY YOUR BRAND.</div>
+        </div>
+    </section>
+</body>
+</html>
