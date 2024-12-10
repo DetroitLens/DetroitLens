@@ -362,59 +362,96 @@
             setInterval(updateNotification, 10000);
         });
     </script>
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section with Animated Sliders -->
 <section class="portfolio-section">
     <h2 class="section-title glow-text" data-text="OUR WORK">
         <span>OUR WORK</span>
     </h2>
     
-    <!-- Before/After Slider -->
-    <div class="before-after-container">
-        <div class="before-image" style="background-image: url('https://jnaudiphotography.com/wp-content/uploads/2023/10/002-scaled.jpg');"></div>
-        <div class="after-image" style="background-image: url('https://jnaudiphotography.com/wp-content/uploads/2023/10/004-scaled.jpg');"></div>
-        <div class="slider-handle">
-            <div class="slider-button"></div>
+    <!-- HDR Slider -->
+    <div class="slider-container">
+        <h3 class="slider-title">HDR Photography</h3>
+        <div class="before-after-container" data-type="hdr">
+            <div class="before-image" style="background-image: url('Image1-raw.jpg');"></div>
+            <div class="after-image" style="background-image: url('Image1-edited.jpg');"></div>
+            <div class="slider-handle">
+                <div class="slider-button"></div>
+            </div>
         </div>
     </div>
 
-    <!-- Portfolio Grid -->
-    <div class="portfolio-grid">
-        <div class="portfolio-item">
-            <img src="https://jnaudiphotography.com/wp-content/uploads/2023/10/004-scaled.jpg" alt="Luxury Home" class="portfolio-image">
-            <div class="portfolio-overlay">
-                <div class="portfolio-category">Luxury Residential</div>
-                <div class="portfolio-location">Birmingham, MI</div>
+    <!-- Virtual Staging Slider -->
+    <div class="slider-container">
+        <h3 class="slider-title">Virtual Staging</h3>
+        <div class="before-after-container" data-type="staging">
+            <div class="before-image" style="background-image: url('empty-room.jpg');"></div>
+            <div class="after-image" style="background-image: url('staged-room.jpg');"></div>
+            <div class="slider-handle">
+                <div class="slider-button"></div>
             </div>
         </div>
-        <!-- Add more portfolio items here -->
+    </div>
+
+    <!-- Twilight Slider -->
+    <div class="slider-container">
+        <h3 class="slider-title">Twilight Conversion</h3>
+        <div class="before-after-container" data-type="twilight">
+            <div class="before-image" style="background-image: url('day-exterior.jpg');"></div>
+            <div class="after-image" style="background-image: url('twilight-exterior.jpg');"></div>
+            <div class="slider-handle">
+                <div class="slider-button"></div>
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
-/* Portfolio Section Styles */
+/* Updated Portfolio Section Styles */
 .portfolio-section {
-    min-height: 100vh;
-    padding: 100px 20px;
+    padding: 40px 20px; /* Reduced spacing */
     position: relative;
-    overflow: hidden;
+    background: var(--bg-dark);
 }
 
 .section-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     text-align: center;
-    margin-bottom: 60px;
-    position: relative;
+    margin-bottom: 40px;
 }
 
-/* Before/After Slider */
+.slider-container {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.slider-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
 .before-after-container {
-    max-width: 1200px;
-    margin: 0 auto 80px;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    height: 600px;
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+    height: 500px;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+.before-image,
+.after-image {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.before-image {
+    left: 0;
+    clip-path: inset(0 50% 0 0);
 }
 
 .slider-handle {
@@ -442,159 +479,82 @@
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
 }
 
-.slider-button::before,
-.slider-button::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 2px;
-    background: black;
-    top: 50%;
-    transform: translateY(-50%);
+/* Hint Animation */
+@keyframes sliderHint {
+    0% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(-10px); }
 }
 
-.slider-button::before {
-    left: 8px;
-}
-
-.slider-button::after {
-    right: 8px;
-}
-
-.before-image,
-.after-image {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.before-image {
-    left: 0;
-    clip-path: inset(0 50% 0 0);
-}
-
-.after-image {
-    right: 0;
-}
-
-/* Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.portfolio-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
-}
-
-.portfolio-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.portfolio-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.8),
-        transparent
-    );
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-image {
-    transform: scale(1.05);
-}
-
-.portfolio-item:hover .portfolio-overlay {
-    transform: translateY(0);
-}
-
-.portfolio-category {
-    font-size: 0.9rem;
-    color: var(--gradient-blue);
-    margin-bottom: 5px;
-}
-
-.portfolio-location {
-    font-size: 1.1rem;
-    color: white;
+.slider-handle.hint {
+    animation: sliderHint 1.5s ease-in-out;
 }
 
 @media (max-width: 768px) {
     .before-after-container {
-        height: 400px;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+        height: 300px;
     }
 }
 </style>
 
 <script>
-// Before/After Slider
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.before-after-container');
-    const handle = document.querySelector('.slider-handle');
-    const beforeImage = document.querySelector('.before-image');
-    let isDragging = false;
+    // Set up sliders
+    document.querySelectorAll('.before-after-container').forEach(container => {
+        const handle = container.querySelector('.slider-handle');
+        const beforeImage = container.querySelector('.before-image');
+        let isDragging = false;
 
-    function updateSlider(e) {
-        if (!isDragging) return;
-        
-        const rect = container.getBoundingClientRect();
-        const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-        
-        handle.style.left = x * 100 + '%';
-        beforeImage.style.clipPath = `inset(0 ${100 - (x * 100)}% 0 0)`;
-    }
+        function updateSlider(e) {
+            if (!isDragging) return;
+            const rect = container.getBoundingClientRect();
+            const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+            handle.style.left = x * 100 + '%';
+            beforeImage.style.clipPath = `inset(0 ${100 - (x * 100)}% 0 0)`;
+        }
 
-    handle.addEventListener('mousedown', () => isDragging = true);
-    document.addEventListener('mousemove', updateSlider);
-    document.addEventListener('mouseup', () => isDragging = false);
-    
-    // Touch events for mobile
-    handle.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        e.preventDefault();
-    });
-    document.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        const touch = e.touches[0];
-        const rect = container.getBoundingClientRect();
-        const x = Math.max(0, Math.min(1, (touch.clientX - rect.left) / rect.width));
+        handle.addEventListener('mousedown', () => isDragging = true);
+        document.addEventListener('mousemove', updateSlider);
+        document.addEventListener('mouseup', () => isDragging = false);
         
-        handle.style.left = x * 100 + '%';
-        beforeImage.style.clipPath = `inset(0 ${100 - (x * 100)}% 0 0)`;
-        e.preventDefault();
+        // Touch events
+        handle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const touch = e.touches[0];
+            const rect = container.getBoundingClientRect();
+            const x = Math.max(0, Math.min(1, (touch.clientX - rect.left) / rect.width));
+            handle.style.left = x * 100 + '%';
+            beforeImage.style.clipPath = `inset(0 ${100 - (x * 100)}% 0 0)`;
+            e.preventDefault();
+        });
+        
+        document.addEventListener('touchend', () => isDragging = false);
     });
-    document.addEventListener('touchend', () => isDragging = false);
+
+    // Intersection Observer for hint animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const handle = entry.target.querySelector('.slider-handle');
+                handle.classList.add('hint');
+                // Remove animation after it plays once
+                setTimeout(() => {
+                    handle.classList.remove('hint');
+                }, 1500);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe all slider containers
+    document.querySelectorAll('.before-after-container').forEach(container => {
+        observer.observe(container);
+    });
 });
 </script>
 </body>
