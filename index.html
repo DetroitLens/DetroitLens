@@ -1,360 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-   <!-- SEO Meta Tags -->
-   <title>Detroit Lens | Professional Real Estate Photography Metro Detroit</title>
-   <meta name="description" content="Premium real estate photography services in Metro Detroit. Specializing in residential, twilight, and drone photography for real estate agents and property managers.">
-   <meta name="keywords" content="real estate photography, Detroit photographer, twilight photos, drone photography, property photos, real estate marketing">
-   
-   <!-- Social Media Meta Tags -->
-   <meta property="og:title" content="Detroit Lens | Real Estate Photography">
-   <meta property="og:description" content="Elevate your listings with professional real estate photography in Metro Detroit">
-   <meta property="og:type" content="website">
-   
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-   
-   <style>
-       /* =====================
-          GLOBAL STYLES
-       ===================== */
-       :root {
-           --gradient-blue: #00e5ff;
-           --gradient-purple: #ff00ff;
-           --gradient-orange: #ff8f00;
-           --bg-dark: #000;
-           --text-light: rgba(255, 255, 255, 0.8);
-       }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Detroit Lens | Professional Real Estate Photography Metro Detroit</title>
+    <meta name="description" content="Premium real estate photography services in Metro Detroit. Specializing in residential, twilight, and drone photography for real estate agents and property managers.">
+    <meta name="keywords" content="real estate photography, Detroit photographer, twilight photos, drone photography, property photos, real estate marketing">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Detroit Lens | Real Estate Photography">
+    <meta property="og:description" content="Elevate your listings with professional real estate photography in Metro Detroit">
+    <meta property="og:type" content="website">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =====================
+           GLOBAL STYLES
+        ===================== */
+        :root {
+            --gradient-blue: #00e5ff;
+            --gradient-purple: #ff00ff;
+            --gradient-orange: #ff8f00;
+            --bg-dark: #000;
+            --text-light: rgba(255, 255, 255, 0.8);
+        }
 
-       * {
-           margin: 0;
-           padding: 0;
-           box-sizing: border-box;
-       }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-       body {
-           background: var(--bg-dark);
-           font-family: 'Poppins', sans-serif;
-           color: white;
-           line-height: 1.6;
-           overflow-x: hidden;
-       }
+        body {
+            background: var(--bg-dark);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-       /* =====================
-          HERO SECTION
-       ===================== */
-       .hero-container {
-           min-height: 100vh;
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           align-items: center;
-           position: relative;
-           padding: 20px;
-           overflow: hidden;
-       }
+        /* =====================
+           HERO SECTION
+        ===================== */
+        .hero-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+        }
 
-       .hero-bg {
-           position: absolute;
-           top: -50%;
-           left: -50%;
-           width: 200%;
-           height: 200%;
-           background: radial-gradient(
-               circle at center,
-               rgba(0, 229, 255, 0.1) 0%,
-               rgba(255, 0, 255, 0.1) 45%,
-               rgba(255, 143, 0, 0.1) 100%
-           );
-           opacity: 0.4;
-           filter: blur(100px);
-           animation: rotate 20s linear infinite;
-           transform-origin: center;
-       }
+        .hero-bg {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(0, 229, 255, 0.1) 0%,
+                rgba(255, 0, 255, 0.1) 45%,
+                rgba(255, 143, 0, 0.1) 100%
+            );
+            opacity: 0.4;
+            filter: blur(100px);
+            animation: rotate 20s linear infinite;
+            transform-origin: center;
+        }
 
-       .hero-content {
-           position: relative;
-           z-index: 2;
-           text-align: center;
-       }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
 
-       /* Apple Neon Gradient Glow Effect */
-       .glow-text {
-           font-size: clamp(2.5rem, 8vw, 5.5rem);
-           font-weight: 700;
-           line-height: 1.2;
-           position: relative;
-           margin-bottom: 20px;
-       }
+        /* Apple Neon Gradient Glow Effect */
+        .glow-text {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            position: relative;
+            margin-bottom: 20px;
+        }
 
-       .glow-text::before {
-           content: attr(data-text);
-           position: absolute;
-           left: 0;
-           top: 0;
-           width: 100%;
-           height: 100%;
-           background: linear-gradient(
-               90deg,
-               var(--gradient-blue) 0%,
-               var(--gradient-blue) 10%,
-               var(--gradient-purple) 45%,
-               var(--gradient-orange) 80%,
-               var(--gradient-orange) 100%
-           );
-           -webkit-background-clip: text;
-           background-clip: text;
-           color: transparent;
-           filter: blur(8px) brightness(0.7);
-           z-index: 1;
-       }
+        .glow-text::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                var(--gradient-blue) 0%,
+                var(--gradient-blue) 10%,
+                var(--gradient-purple) 45%,
+                var(--gradient-orange) 80%,
+                var(--gradient-orange) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: blur(8px) brightness(0.7);
+            z-index: 1;
+        }
 
-       .glow-text span {
-           background: linear-gradient(
-               90deg,
-               var(--gradient-blue) 0%,
-               var(--gradient-blue) 10%,
-               var(--gradient-purple) 45%,
-               var(--gradient-orange) 80%,
-               var(--gradient-orange) 100%
-           );
-           -webkit-background-clip: text;
-           background-clip: text;
-           color: transparent;
-           position: relative;
-           z-index: 2;
-           filter: brightness(1.2);
-       }
+        .glow-text span {
+            background: linear-gradient(
+                90deg,
+                var(--gradient-blue) 0%,
+                var(--gradient-blue) 10%,
+                var(--gradient-purple) 45%,
+                var(--gradient-orange) 80%,
+                var(--gradient-orange) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            z-index: 2;
+            filter: brightness(1.2);
+        }
 
-       .tagline {
-           font-size: clamp(1rem, 3vw, 1.2rem);
-           font-weight: 300;
-           letter-spacing: 1.5px;
-           opacity: 0;
-           transform: translateY(20px);
-           animation: fadeInUp 0.8s ease forwards 0.3s;
-       }
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
 
-       /* =====================
-          FOMO NOTIFICATIONS
-       ===================== */
-       .notification-section {
-           position: fixed;
-           top: 20px;
-           right: 20px;
-           width: 300px;
-           z-index: 1000;
-       }
+        /* =====================
+           FOMO NOTIFICATIONS
+        ===================== */
+        .notification-section {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 1000;
+        }
 
-       .notification {
-           background: rgba(0, 0, 0, 0.8);
-           backdrop-filter: blur(10px);
-           border-radius: 12px;
-           padding: 15px;
-           margin-bottom: 10px;
-           display: flex;
-           align-items: center;
-           gap: 15px;
-           transform: translateX(120%);
-           opacity: 0;
-           animation: slideIn 30s linear infinite;
-       }
+        .notification {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(120%);
+            opacity: 0;
+            animation: slideIn 10s linear;
+        }
 
-       .notification-icon {
-           width: 40px;
-           height: 40px;
-           border-radius: 50%;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           flex-shrink: 0;
-           background: linear-gradient(
-               45deg,
-               var(--gradient-blue),
-               var(--gradient-purple)
-           );
-       }
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: linear-gradient(
+                45deg,
+                var(--gradient-blue),
+                var(--gradient-purple)
+            );
+        }
 
-       .notification-content {
-           flex-grow: 1;
-       }
+        .notification-content {
+            flex-grow: 1;
+        }
 
-       .notification-title {
-           font-weight: 500;
-           margin-bottom: 4px;
-           background: linear-gradient(
-               90deg,
-               var(--gradient-blue),
-               var(--gradient-purple)
-           );
-           -webkit-background-clip: text;
-           background-clip: text;
-           color: transparent;
-       }
+        .notification-title {
+            font-weight: 500;
+            margin-bottom: 4px;
+            background: linear-gradient(
+                90deg,
+                var(--gradient-blue),
+                var(--gradient-purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-       .notification-text {
-           font-size: 0.9rem;
-           color: var(--text-light);
-       }
+        .notification-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
 
-       /* Animations */
-       @keyframes fadeInUp {
-           to {
-               opacity: 1;
-               transform: translateY(0);
-           }
-       }
+        /* =====================
+           ANIMATIONS
+        ===================== */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-       @keyframes rotate {
-           from { transform: rotate(0deg); }
-           to { transform: rotate(360deg); }
-       }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
-       @keyframes slideIn {
-           0%, 100% { transform: translateX(120%); opacity: 0; }
-           3%, 25% { transform: translateX(0); opacity: 1; }
-           28% { transform: translateX(-120%); opacity: 0; }
-       }
+        @keyframes slideIn {
+            0%, 100% { transform: translateX(120%); opacity: 0; }
+            3%, 25% { transform: translateX(0); opacity: 1; }
+            28% { transform: translateX(-120%); opacity: 0; }
+        }
 
-       .notification:nth-child(2) { animation-delay: 10s; }
-       .notification:nth-child(3) { animation-delay: 20s; }
-
-       @media (max-width: 768px) {
-           .notification-section {
-               width: calc(100% - 40px);
-           }
-       }
-   </style>
+        /* =====================
+           RESPONSIVE DESIGN
+        ===================== */
+        @media (max-width: 768px) {
+            .notification-section {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
 </head>
 <body>
-   <!-- Hero Section -->
-   <section class="hero-container">
-       <div class="hero-bg"></div>
-       <div class="hero-content">
-           <div class="glow-text" data-text="DETROIT LENS">
-               <span>DETROIT LENS</span>
-           </div>
-           <div class="tagline">ELEVATE YOUR LISTINGS. AMPLIFY YOUR BRAND.</div>
-       </div>
-   </section>
+    <!-- Hero Section -->
+    <section class="hero-container">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="glow-text" data-text="DETROIT LENS">
+                <span>DETROIT LENS</span>
+            </div>
+            <div class="tagline">ELEVATE YOUR LISTINGS. AMPLIFY YOUR BRAND.</div>
+        </div>
+    </section>
 
-   <!-- FOMO Notifications -->
-   <div class="notification-section">
-       <div class="notification">
-           <div class="notification-icon">📸</div>
-           <div class="notification-content">
-               <div class="notification-title">Loading...</div>
-               <div class="notification-text">Initializing notifications...</div>
-           </div>
-       </div>
-   </div>
+    <!-- FOMO Notifications -->
+    <div class="notification-section">
+        <div class="notification">
+            <div class="notification-icon">📸</div>
+            <div class="notification-content">
+                <div class="notification-title">Loading...</div>
+                <div class="notification-text">Initializing notifications...</div>
+            </div>
+        </div>
+    </div>
 
-   <!-- Notification System -->
-   <script>
-       document.addEventListener('DOMContentLoaded', () => {
-           const bookingNotifications = [
-               { icon: "📸", title: "Premium Package", text: "Just booked in Birmingham - $485" },
-               { icon: "📸", title: "Essential Package", text: "New shoot in Rochester Hills - $220" },
-               { icon: "🏠", title: "Signature Package", text: "Luxury home in Bloomfield - $425" },
-               { icon: "🚁", title: "Drone Add-on", text: "Aerial package in Troy - $70" },
-               { icon: "🌙", title: "Twilight Shoot", text: "Evening session in Novi - $50" },
-               { icon: "📸", title: "New Booking", text: "Full package in West Bloomfield" },
-               { icon: "🎥", title: "Video Tour", text: "3D capture in Ann Arbor - $125" },
-               { icon: "📸", title: "Just Booked", text: "Premium shoot in Grosse Pointe" },
-               { icon: "🏠", title: "New Client", text: "Essential package in Plymouth" },
-               { icon: "📸", title: "Rush Booking", text: "Same-day in Royal Oak +$45" },
-               { icon: "🎥", title: "3D Tour", text: "Matterport in Farmington Hills" },
-               { icon: "📸", title: "New Listing", text: "Condo shoot in Downtown Detroit" },
-               { icon: "🚁", title: "Drone Package", text: "Aerial views in Commerce" },
-               { icon: "📸", title: "Just Booked", text: "Waterfront home in Harrison Twp" },
-               { icon: "🏠", title: "New Booking", text: "Estate photos in Oakland Twp" }
-           ];
+    <!-- Notification System -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookingNotifications = [
+                { icon: "📸", title: "Premium Package", text: "Just booked in Birmingham - $485" },
+                { icon: "📸", title: "Essential Package", text: "New shoot in Rochester Hills - $220" },
+                { icon: "🏠", title: "Signature Package", text: "Luxury home in Bloomfield - $425" },
+                { icon: "🚁", title: "Drone Add-on", text: "Aerial package in Troy - $70" },
+                { icon: "🌙", title: "Twilight Shoot", text: "Evening session in Novi - $50" },
+                { icon: "📸", title: "New Booking", text: "Full package in West Bloomfield" },
+                { icon: "🎥", title: "Video Tour", text: "3D capture in Ann Arbor - $125" },
+                { icon: "📸", title: "Just Booked", text: "Premium shoot in Grosse Pointe" },
+                { icon: "🏠", title: "New Client", text: "Essential package in Plymouth" },
+                { icon: "📸", title: "Rush Booking", text: "Same-day in Royal Oak +$45" },
+                { icon: "🎥", title: "3D Tour", text: "Matterport in Farmington Hills" },
+                { icon: "📸", title: "New Listing", text: "Condo shoot in Downtown Detroit" },
+                { icon: "🚁", title: "Drone Package", text: "Aerial views in Commerce" },
+                { icon: "📸", title: "Just Booked", text: "Waterfront home in Harrison Twp" },
+                { icon: "🏠", title: "New Booking", text: "Estate photos in Oakland Twp" }
+            ];
 
-           const deliveryNotifications = [
-               { icon: "✨", title: "Photos Delivered", text: "24hr turnaround in Birmingham" },
-               { icon: "✨", title: "Just Completed", text: "Luxury edit in Bloomfield Hills" },
-               { icon: "✨", title: "Ready for Download", text: "Gallery live in Rochester" },
-               { icon: "🎯", title: "Just Finished", text: "Virtual staging in Royal Oak" },
-               { icon: "✨", title: "Rush Delivery", text: "Same-day edit in Troy" },
-               { icon: "✨", title: "Photos Ready", text: "Premium edits in Northville" },
-               { icon: "✨", title: "Just Uploaded", text: "3D tour ready in Canton" },
-               { icon: "🎯", title: "Completed", text: "Twilight edits in Brighton" },
-               { icon: "✨", title: "Gallery Live", text: "40 photos in West Bloomfield" },
-               { icon: "✨", title: "Ready to View", text: "Full package in Ferndale" },
-               { icon: "✨", title: "Just Finished", text: "Drone footage in Commerce" },
-               { icon: "🎯", title: "Photos Ready", text: "Quick delivery to Plymouth" }
-           ];
+            const deliveryNotifications = [
+                { icon: "✨", title: "Photos Delivered", text: "24hr turnaround in Birmingham" },
+                { icon: "✨", title: "Just Completed", text: "Luxury edit in Bloomfield Hills" },
+                { icon: "✨", title: "Ready for Download", text: "Gallery live in Rochester" },
+                { icon: "🎯", title: "Just Finished", text: "Virtual staging in Royal Oak" },
+                { icon: "✨", title: "Rush Delivery", text: "Same-day edit in Troy" },
+                { icon: "✨", title: "Photos Ready", text: "Premium edits in Northville" },
+                { icon: "✨", title: "Just Uploaded", text: "3D tour ready in Canton" },
+                { icon: "🎯", title: "Completed", text: "Twilight edits in Brighton" },
+                { icon: "✨", title: "Gallery Live", text: "40 photos in West Bloomfield" },
+                { icon: "✨", title: "Ready to View", text: "Full package in Ferndale" },
+                { icon: "✨", title: "Just Finished", text: "Drone footage in Commerce" },
+                { icon: "🎯", title: "Photos Ready", text: "Quick delivery to Plymouth" }
+            ];
 
-           const reviewNotifications = [
-               { icon: "⭐", title: "New 5-Star Review", text: "Perfect photos! - Sarah K." },
-               { icon: "⭐", title: "Client Review", text: "Exceeded expectations! - Tom B." },
-               { icon: "⭐", title: "Agent Feedback", text: "Amazing work as always! - Mike R." },
-               { icon: "⭐", title: "New Review", text: "Best in the business! - Lisa M." },
-               { icon: "⭐", title: "5-Star Rating", text: "Lightning fast delivery - John D." },
-               { icon: "⭐", title: "Client Feedback", text: "Worth every penny - Rachel S." },
-               { icon: "⭐", title: "New Review", text: "Stunning twilight shots - Mark W." }
-           ];
+            const reviewNotifications = [
+                { icon: "⭐", title: "New 5-Star Review", text: "Perfect photos! - Sarah K." },
+                { icon: "⭐", title: "Client Review", text: "Exceeded expectations! - Tom B." },
+                { icon: "⭐", title: "Agent Feedback", text: "Amazing work as always! - Mike R." },
+                { icon: "⭐", title: "New Review", text: "Best in the business! - Lisa M." },
+                { icon: "⭐", title: "5-Star Rating", text: "Lightning fast delivery - John D." },
+                { icon: "⭐", title: "Client Feedback", text: "Worth every penny - Rachel S." },
+                { icon: "⭐", title: "New Review", text: "Stunning twilight shots - Mark W." }
+            ];
 
-           const referralNotifications = [
-               { icon: "🎁", title: "Referral Bonus", text: "Agent earned $50 credit in Troy" },
-               { icon: "💫", title: "Team Referral", text: "Group discount for Keller Williams" },
-               { icon: "🎁", title: "Agent Reward", text: "RE/MAX team earned free drone shots" },
-               { icon: "💫", title: "Partner Bonus", text: "Century 21 unlocked bulk pricing" },
-               { icon: "🎁", title: "Referral Credit", text: "Agent earned twilight session" },
-               { icon: "💫", title: "Team Reward", text: "Luxury team got premium upgrade" },
-               { icon: "🎁", title: "Bonus Earned", text: "Agent got free virtual staging" }
-           ];
+            const referralNotifications = [
+                { icon: "🎁", title: "Referral Bonus", text: "Agent earned $50 credit in Troy" },
+                { icon: "💫", title: "Team Referral", text: "Group discount for Keller Williams" },
+                { icon: "🎁", title: "Agent Reward", text: "RE/MAX team earned free drone shots" },
+                { icon: "💫", title: "Partner Bonus", text: "Century 21 unlocked bulk pricing" },
+                { icon: "🎁", title: "Referral Credit", text: "Agent earned twilight session" }
+            ];
 
-           const rushNotifications = [
-               { icon: "⚡", title: "Rush Delivery", text: "Same-day edit in Birmingham" },
-               { icon: "🏃", title: "Express Service", text: "4-hour turnaround in Troy" },
-               { icon: "⚡", title: "Rush Order", text: "Next-day delivery in Rochester" },
-               { icon: "🏃", title: "Priority Edit", text: "Express service in Royal Oak" },
-               { icon: "⚡", title: "Quick Turn", text: "Rush delivery in Novi" }
-           ];
+            const rushNotifications = [
+                { icon: "⚡", title: "Rush Delivery", text: "Same-day edit in Birmingham" },
+                { icon: "🏃", title: "Express Service", text: "4-hour turnaround in Troy" },
+                { icon: "⚡", title: "Rush Order", text: "Next-day delivery in Rochester" }
+            ];
 
-           const successNotifications = [
-               { icon: "🏠", title: "Agent Success", text: "Sold in 24hrs - Birmingham" },
-               { icon: "💎", title: "Quick Sale", text: "Listed & sold in Bloomfield" },
-               { icon: "🎯", title: "Just Sold", text: "Above asking in Rochester" },
-               { icon: "💫", title: "Success Story", text: "Multiple offers in Royal Oak" },
-               { icon: "🏠", title: "Fast Sale", text: "3 days on market in Troy" }
-           ];
+            const successNotifications = [
+                { icon: "🏠", title: "Agent Success", text: "Sold in 24hrs - Birmingham" },
+                { icon: "💎", title: "Quick Sale", text: "Listed & sold in Bloomfield" },
+                { icon: "🎯", title: "Just Sold", text: "Above asking in Rochester" }
+            ];
 
-           const promoNotifications = [
-               { icon: "🔥", title: "Limited Time", text: "20% off twilight shoots" },
-               { icon: "💫", title: "New Agents", text: "First shoot discount" },
-               { icon: "🎉", title: "Special Offer", text: "Free drone with premium" },
-               { icon: "💫", title: "Team Deal", text: "Bulk booking discount" }
-           ];
+            const promoNotifications = [
+                { icon: "🔥", title: "Limited Time", text: "20% off twilight shoots" },
+                { icon: "💫", title: "New Agents", text: "First shoot discount" },
+                { icon: "🎉", title: "Special Offer", text: "Free drone with premium" }
+            ];
 
-           function getRandomNotification() {
-               const rand = Math.floor(Math.random() * 100);
-               
-               // Weight the probability of each notification type
-               if (rand < 30) {
-                   return bookingNotifications[Math.floor(Math.random() * bookingNotifications.length)];
-               } else if (rand < 55) {
-                   return deliveryNotifications[Math.floor(Math.random() * deliveryNotifications.length)];
-               } else if (rand < 65) {
-                   return reviewNotifications[Math.floor(Math.random() * reviewNotifications.length)];
-               } else if (rand < 75) {
-                   return referralNotifications[Math.floor(Math.random() * referralNotifications.length)];
-               } else if (rand < 85) {
-                   return rushNotifications[Math.floor(Math.random() * rushNotifications.length)];
-               } else if (rand < 95) {
-                   return successNotifications[Math.floor(Math.random() * successNotifications.length)];
-               } else {
-                   return promoNotifications[Math.floor(Math.random() * promoNotifications.length)];
-               }
-           }
+            function getRandomNotification() {
+                const rand = Math.floor(Math.random() * 100);
+                
+                if (rand < 30) {
+                    return bookingNotifications[Math.floor(Math.random() * bookingNotifications.length)];
+                } else if (rand < 55) {
+                    return deliveryNotifications[Math.floor(Math.random() * deliveryNotifications.length)];
+                } else if (rand < 65) {
+                    return reviewNotifications[Math.floor(Math.random() * reviewNotifications.length)];
+                } else if (rand < 75) {
+                    return referralNotifications[Math.floor(Math.random() * referralNotifications.length)];
+                } else if (rand < 85) {
+                    return rushNotifications[Math.floor(Math.random() * rushNotifications.length)];
+                } else if (rand < 95) {
+                    return successNotifications[Math.floor(Math.random() * successNotifications.length)];
+                } else {
+                    return promoNotifications[Math.floor(Math.random() * promoNotifications.length)];
+                }
+            }
 
-           const notificationElement = document.querySelector('.notification');
-           
-           function updateNotification() {
-               const data const notificationElement = document.querySelector('.notification');
+            const notificationElement = document.querySelector('.notification');
             
             function updateNotification() {
                 const data = getRandomNotification();
@@ -362,16 +353,12 @@
                 notificationElement.querySelector('.notification-title').textContent = data.title;
                 notificationElement.querySelector('.notification-text').textContent = data.text;
                 
-                // Reset animation
                 notificationElement.style.animation = 'none';
-                notificationElement.offsetHeight; // Trigger reflow
+                notificationElement.offsetHeight;
                 notificationElement.style.animation = 'slideIn 10s linear';
             }
 
-            // Initial update
             updateNotification();
-
-            // Update every 10 seconds
             setInterval(updateNotification, 10000);
         });
     </script>
