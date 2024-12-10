@@ -1,3 +1,6 @@
+Here's the complete code combining both Hero and FOMO sections:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +46,7 @@
         }
 
         /* =====================
-           HERO SECTION
+           HERO SECTION STYLES
         ===================== */
         .hero-container {
             min-height: 100vh;
@@ -138,6 +141,68 @@
         }
 
         /* =====================
+           FOMO NOTIFICATION STYLES
+        ===================== */
+        .notification-section {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 1000;
+        }
+
+        .notification {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(120%);
+            opacity: 0;
+            animation: slideIn 30s linear infinite;
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: linear-gradient(
+                45deg,
+                var(--gradient-blue),
+                var(--gradient-purple)
+            );
+        }
+
+        .notification-content {
+            flex-grow: 1;
+        }
+
+        .notification-title {
+            font-weight: 500;
+            margin-bottom: 4px;
+            background: linear-gradient(
+                90deg,
+                var(--gradient-blue),
+                var(--gradient-purple)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .notification-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* =====================
            ANIMATIONS
         ===================== */
         @keyframes fadeInUp {
@@ -152,12 +217,26 @@
             to { transform: rotate(360deg); }
         }
 
+        @keyframes slideIn {
+            0%, 100% { transform: translateX(120%); opacity: 0; }
+            3%, 25% { transform: translateX(0); opacity: 1; }
+            28% { transform: translateX(-120%); opacity: 0; }
+        }
+
+        .notification:nth-child(2) { animation-delay: 10s; }
+        .notification:nth-child(3) { animation-delay: 20s; }
+
         /* =====================
            RESPONSIVE DESIGN
         ===================== */
         @media (max-width: 768px) {
             .hero-content {
                 padding: 0 20px;
+            }
+
+            .notification-section {
+                width: calc(100% - 40px);
+                right: 20px;
             }
         }
     </style>
@@ -173,5 +252,51 @@
             <div class="tagline">ELEVATE YOUR LISTINGS. AMPLIFY YOUR BRAND.</div>
         </div>
     </section>
+
+    <!-- FOMO Notifications -->
+    <div class="notification-section">
+        <div class="notification">
+            <div class="notification-icon">📸</div>
+            <div class="notification-content">
+                <div class="notification-title">Just Booked</div>
+                <div class="notification-text">Twilight shoot in Birmingham</div>
+            </div>
+        </div>
+        
+        <div class="notification">
+            <div class="notification-icon">⭐</div>
+            <div class="notification-content">
+                <div class="notification-title">New 5-Star Review</div>
+                <div class="notification-text">From Sarah K. in Rochester Hills</div>
+            </div>
+        </div>
+        
+        <div class="notification">
+            <div class="notification-icon">🏠</div>
+            <div class="notification-content">
+                <div class="notification-title">Popular Times</div>
+                <div class="notification-text">3 bookings today in Troy</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Notifications -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notifications = document.querySelectorAll('.notification');
+            
+            // Reset animations every 30 seconds
+            setInterval(() => {
+                notifications.forEach(notification => {
+                    notification.style.animation = 'none';
+                    notification.offsetHeight; // Trigger reflow
+                    notification.style.animation = null;
+                });
+            }, 30000);
+        });
+    </script>
 </body>
 </html>
+```
+
+This is the complete, working code that includes both the Hero section and FOMO notifications. Everything is properly organized with CSS in the head section, HTML in the body, and JavaScript at the bottom before the closing body tag. You can copy this entire code block and paste it directly into your GitHub file.
