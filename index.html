@@ -23,7 +23,7 @@
         :root {
             --gradient-blue: #00e5ff;
             --gradient-purple: #ff00ff;
-            --gradient-orange: #ff8f00;
+            --gradient-orange: #ff8c00;
             --bg-dark: #000;
             --text-light: rgba(255, 255, 255, 0.8);
         }
@@ -200,55 +200,120 @@
         }
 
         /* =====================
-           ANIMATIONS
+           PORTFOLIO SECTION
         ===================== */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .portfolio-section {
+            padding: 4rem 2rem;
+            background: var(--bg-dark);
+            position: relative;
+            z-index: 1;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 3.5rem;
         }
 
-        @keyframes slideIn {
-            0%, 100% { transform: translateX(120%); opacity: 0; }
-            3%, 25% { transform: translateX(0); opacity: 1; }
-            28% { transform: translateX(-120%); opacity: 0; }
+        .slider-container {
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+            padding: 0 2rem;
+            flex-wrap: nowrap;
+            justify-content: center;
         }
 
-        /* =====================
-           RESPONSIVE DESIGN
-        ===================== */
+        .comparison-slider {
+            flex: 1;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .comparison-slider:hover {
+            transform: scale(1.02);
+        }
+
+        .comparison-slider h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .comparison-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: col-resize;
+        }
+
+        .comparison-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comparison-image.modified {
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+
+        .comparison-separator {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-blue);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .comparison-separator::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-blue);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
         @media (max-width: 768px) {
-            .notification-section {
-                width: calc(100% - 40px);
+            .slider-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .comparison-slider {
+                max-width: 100%;
+            }
+            
+            .comparison-container {
+                height: 400px;
             }
         }
-}
-    
-    /* New CSS goes here */
-    .hero-container {
-        min-height: 60vh;
-        margin-bottom: 2rem;
-    }
-    .portfolio-section {
-        padding: 2rem 2rem;
-    }
-    .section-title {
-        margin-bottom: 2rem;
-    }
-    .comparison-slider {
-        margin-bottom: 2rem;
-    }
-    
-</style>
     </style>
 </head>
 <body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="gradient-orb cyan"></div>
+        <div class="gradient-orb magenta"></div>
+        <div class="gradient-orb orange"></div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-container">
         <div class="hero-bg"></div>
@@ -271,116 +336,7 @@
         </div>
     </div>
 
-    <!-- Notification System -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bookingNotifications = [
-                { icon: "📸", title: "Premium Package", text: "Just booked in Birmingham - $485" },
-                { icon: "📸", title: "Essential Package", text: "New shoot in Rochester Hills - $220" },
-                { icon: "🏠", title: "Signature Package", text: "Luxury home in Bloomfield - $425" },
-                { icon: "🚁", title: "Drone Add-on", text: "Aerial package in Troy - $70" },
-                { icon: "🌙", title: "Twilight Shoot", text: "Evening session in Novi - $50" },
-                { icon: "📸", title: "New Booking", text: "Full package in West Bloomfield" },
-                { icon: "🎥", title: "Video Tour", text: "3D capture in Ann Arbor - $125" },
-                { icon: "📸", title: "Just Booked", text: "Premium shoot in Grosse Pointe" },
-                { icon: "🏠", title: "New Client", text: "Essential package in Plymouth" },
-                { icon: "📸", title: "Rush Booking", text: "Same-day in Royal Oak +$45" },
-                { icon: "🎥", title: "3D Tour", text: "Matterport in Farmington Hills" },
-                { icon: "📸", title: "New Listing", text: "Condo shoot in Downtown Detroit" },
-                { icon: "🚁", title: "Drone Package", text: "Aerial views in Commerce" },
-                { icon: "📸", title: "Just Booked", text: "Waterfront home in Harrison Twp" },
-                { icon: "🏠", title: "New Booking", text: "Estate photos in Oakland Twp" }
-            ];
-
-            const deliveryNotifications = [
-                { icon: "✨", title: "Photos Delivered", text: "24hr turnaround in Birmingham" },
-                { icon: "✨", title: "Just Completed", text: "Luxury edit in Bloomfield Hills" },
-                { icon: "✨", title: "Ready for Download", text: "Gallery live in Rochester" },
-                { icon: "🎯", title: "Just Finished", text: "Virtual staging in Royal Oak" },
-                { icon: "✨", title: "Rush Delivery", text: "Same-day edit in Troy" },
-                { icon: "✨", title: "Photos Ready", text: "Premium edits in Northville" },
-                { icon: "✨", title: "Just Uploaded", text: "3D tour ready in Canton" },
-                { icon: "🎯", title: "Completed", text: "Twilight edits in Brighton" },
-                { icon: "✨", title: "Gallery Live", text: "40 photos in West Bloomfield" },
-                { icon: "✨", title: "Ready to View", text: "Full package in Ferndale" },
-                { icon: "✨", title: "Just Finished", text: "Drone footage in Commerce" },
-                { icon: "🎯", title: "Photos Ready", text: "Quick delivery to Plymouth" }
-            ];
-
-            const reviewNotifications = [
-                { icon: "⭐", title: "New 5-Star Review", text: "Perfect photos! - Sarah K." },
-                { icon: "⭐", title: "Client Review", text: "Exceeded expectations! - Tom B." },
-                { icon: "⭐", title: "Agent Feedback", text: "Amazing work as always! - Mike R." },
-                { icon: "⭐", title: "New Review", text: "Best in the business! - Lisa M." },
-                { icon: "⭐", title: "5-Star Rating", text: "Lightning fast delivery - John D." },
-                { icon: "⭐", title: "Client Feedback", text: "Worth every penny - Rachel S." },
-                { icon: "⭐", title: "New Review", text: "Stunning twilight shots - Mark W." }
-            ];
-
-            const referralNotifications = [
-                { icon: "🎁", title: "Referral Bonus", text: "Agent earned $50 credit in Troy" },
-                { icon: "💫", title: "Team Referral", text: "Group discount for Keller Williams" },
-                { icon: "🎁", title: "Agent Reward", text: "RE/MAX team earned free drone shots" },
-                { icon: "💫", title: "Partner Bonus", text: "Century 21 unlocked bulk pricing" },
-                { icon: "🎁", title: "Referral Credit", text: "Agent earned twilight session" }
-            ];
-
-            const rushNotifications = [
-                { icon: "⚡", title: "Rush Delivery", text: "Same-day edit in Birmingham" },
-                { icon: "🏃", title: "Express Service", text: "4-hour turnaround in Troy" },
-                { icon: "⚡", title: "Rush Order", text: "Next-day delivery in Rochester" }
-            ];
-
-            const successNotifications = [
-                { icon: "🏠", title: "Agent Success", text: "Sold in 24hrs - Birmingham" },
-                { icon: "💎", title: "Quick Sale", text: "Listed & sold in Bloomfield" },
-                { icon: "🎯", title: "Just Sold", text: "Above asking in Rochester" }
-            ];
-
-            const promoNotifications = [
-                { icon: "🔥", title: "Limited Time", text: "20% off twilight shoots" },
-                { icon: "💫", title: "New Agents", text: "First shoot discount" },
-                { icon: "🎉", title: "Special Offer", text: "Free drone with premium" }
-            ];
-
-            function getRandomNotification() {
-                const rand = Math.floor(Math.random() * 100);
-                
-                if (rand < 30) {
-                    return bookingNotifications[Math.floor(Math.random() * bookingNotifications.length)];
-                } else if (rand < 55) {
-                    return deliveryNotifications[Math.floor(Math.random() * deliveryNotifications.length)];
-                } else if (rand < 65) {
-                    return reviewNotifications[Math.floor(Math.random() * reviewNotifications.length)];
-                } else if (rand < 75) {
-                    return referralNotifications[Math.floor(Math.random() * referralNotifications.length)];
-                } else if (rand < 85) {
-                    return rushNotifications[Math.floor(Math.random() * rushNotifications.length)];
-                } else if (rand < 95) {
-                    return successNotifications[Math.floor(Math.random() * successNotifications.length)];
-                } else {
-                    return promoNotifications[Math.floor(Math.random() * promoNotifications.length)];
-                }
-            }
-
-            const notificationElement = document.querySelector('.notification');
-            
-            function updateNotification() {
-                const data = getRandomNotification();
-                notificationElement.querySelector('.notification-icon').textContent = data.icon;
-                notificationElement.querySelector('.notification-title').textContent = data.title;
-                notificationElement.querySelector('.notification-text').textContent = data.text;
-                
-                notificationElement.style.animation = 'none';
-                notificationElement.offsetHeight;
-                notificationElement.style.animation = 'slideIn 10s linear';
-            }
-
-            updateNotification();
-            setInterval(updateNotification, 10000);
-        });
-    </script>
-<!-- Portfolio Section -->
+    <!-- Portfolio Section -->
     <section class="portfolio-section">
         <h2 class="section-title glow-text" data-text="OUR WORK">
             <span>OUR WORK</span>
@@ -419,16 +375,140 @@
             </div>
         </div>
     </section>
+  <!-- Recent Work Gallery Section -->
+<style>
+    /* =====================
+       RECENT WORK GALLERY
+    ===================== */
+    .recent-work-gallery {
+        background: transparent;
+        min-height: 100vh;
+        padding: 1rem 0;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
 
-    <!-- Recent Work Gallery Section -->
+    .gallery-title {
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: bold;
+        position: relative;
+        color: white;
+        transition: filter 0.3s ease;
+    }
+
+    .gallery-title:hover {
+        filter: brightness(1.5);
+    }
+
+    .gallery-container {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        position: relative;
+        cursor: grab;
+    }
+
+    .gallery-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-track {
+        display: flex;
+        gap: 4px;
+        padding: 0 2rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .gallery-slice {
+        width: 60px;
+        height: 70vh;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 4px;
+        background: #111;
+        transform-origin: center;
+    }
+
+    .gallery-slice img {
+        height: 100%;
+        width: 400px;
+        max-width: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: cover;
+    }
+
+    .image-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-modal.show {
+        opacity: 1;
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 90vh;
+        margin: auto;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-content.show {
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-slice {
+            height: 60vh;
+        }
+        .gallery-title {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+
 <section class="recent-work-gallery">
-    <h2 class="gallery-title glow-text" data-text="RECENT WORK">
-        <span>RECENT WORK</span>
-    </h2>
+    <h2 class="gallery-title">RECENT WORK</h2>
     
     <div class="gallery-container">
         <div class="gallery-track">
-            <!-- All 32 images in vertical slices -->
             <div class="gallery-slice" tabindex="0">
                 <img src="https://i.postimg.cc/GtNyT9fb/DJI-0007-v2.jpg" alt="Real Estate Photo 1">
             </div>
@@ -502,28 +582,22 @@
                 <img src="https://i.postimg.cc/bwPQxSJv/dsc04644-3.jpg" alt="Real Estate Photo 24">
             </div>
             <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Z5L6VYBx/dsc04644-4.jpg" alt="Real Estate Photo 25">
+                <img src="https://i.postimg.cc/CKLktybT/dsc06019-2.jpg" alt="Real Estate Photo 25">
             </div>
             <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/CKLktybT/dsc06019-2.jpg" alt="Real Estate Photo 26">
+                <img src="https://i.postimg.cc/vmqfwPv1/DSC06062-2.jpg" alt="Real Estate Photo 26">
             </div>
             <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/vmqfwPv1/DSC06062-2.jpg" alt="Real Estate Photo 27">
+                <img src="https://i.postimg.cc/7657HgBK/DSC06168-2.jpg" alt="Real Estate Photo 27">
             </div>
             <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/7657HgBK/DSC06168-2.jpg" alt="Real Estate Photo 28">
+                <img src="https://i.postimg.cc/7h727qr7/DSC08336-2.jpg" alt="Real Estate Photo 28">
             </div>
             <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/7h727qr7/DSC08336-2.jpg" alt="Real Estate Photo 29">
+                <img src="https://i.postimg.cc/MZjRgmfT/DSC08406-2.jpg" alt="Real Estate Photo 29">
             </div>
             <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/MZjRgmfT/DSC08406-2.jpg" alt="Real Estate Photo 30">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/15h6SVDK/DSC08406-3.jpg" alt="Real Estate Photo 31">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Y9TFhhZM/DSC08828-2.jpg" alt="Real Estate Photo 32">
+                <img src="https://i.postimg.cc/Y9TFhhZM/DSC08828-2.jpg" alt="Real Estate Photo 30">
             </div>
         </div>
     </div>
@@ -534,331 +608,229 @@
         <img class="modal-content" id="modal-img" src="" alt="Full size image">
     </div>
 </section>
+  <script>
+    // Comparison Slider Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+        const containers = document.querySelectorAll('.comparison-container');
 
-<style>
-.recent-work-gallery {
-    background: #000;
-    min-height: 100vh;
-    padding: 2rem 0;
-    overflow: hidden;
-    position: relative;
-}
+        containers.forEach(container => {
+            const modifiedImage = container.querySelector('.modified');
+            const separator = container.querySelector('.comparison-separator');
 
-.gallery-title {
-    font-size: 3.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    font-weight: bold;
-    position: relative;
-}
-
-.gallery-title span {
-    background: linear-gradient(90deg, #00ffff, #ff00ff, #ff8c00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: gradientFlow 6s linear infinite;
-}
-
-.gallery-container {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.gallery-container::-webkit-scrollbar {
-    display: none;
-}
-
-.gallery-track {
-    display: flex;
-    gap: 4px;
-    padding: 0 2rem;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
-.gallery-slice {
-    width: 60px;
-    height: 70vh;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: width 0.5s ease;
-    border-radius: 4px;
-    background: #111;
-}
-
-.gallery-slice:hover {
-    width: 400px;
-}
-
-.gallery-slice img {
-    height: 100%;
-    width: 400px;
-    max-width: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    object-fit: cover;
-}
-
-.image-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.image-modal.show {
-    opacity: 1;
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 90vh;
-    margin: auto;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.modal-content.show {
-    opacity: 1;
-}
-
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-}
-
-@media (max-width: 768px) {
-    .gallery-slice {
-        height: 60vh;
-    }
-    .gallery-title {
-        font-size: 2.5rem;
-    }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.gallery-container');
-    const slices = document.querySelectorAll('.gallery-slice');
-    const modal = document.querySelector('.image-modal');
-    const modalImg = document.querySelector('#modal-img');
-    const closeBtn = document.querySelector('.modal-close');
-    
-    // Handle mouse drag scrolling
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    container.addEventListener('mousedown', (e) => {
-        isDown = true;
-        container.style.cursor = 'grabbing';
-        startX = e.pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-    });
-
-    container.addEventListener('mouseleave', () => {
-        isDown = false;
-        container.style.cursor = 'grab';
-    });
-
-    container.addEventListener('mouseup', () => {
-        isDown = false;
-        container.style.cursor = 'grab';
-    });
-
-    container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 2;
-        container.scrollLeft = scrollLeft - walk;
-    });
-
-    // Modal functionality
-    slices.forEach(slice => {
-        slice.addEventListener('click', () => {
-            const img = slice.querySelector('img');
-            modal.style.display = 'block';
-            modalImg.src = img.src;
-            setTimeout(() => {
-                modal.classList.add('show');
-                modalImg.classList.add('show');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    function closeModal() {
-        modal.classList.remove('show');
-        modalImg.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-        }, 300);
-    }
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
-    });
-});
-</script>
-    <style>
-        .portfolio-section {
-            padding: 4rem 2rem;
-            background: var(--bg-dark);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 3.5rem;
-        }
-
-        .slider-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .comparison-slider {
-            margin-bottom: 4rem;
-        }
-
-        .comparison-slider h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .comparison-container {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: col-resize;
-        }
-
-        .comparison-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .comparison-image.modified {
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-        }
-
-        .comparison-separator {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-blue);
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        .comparison-separator::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-blue);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-section {
-                padding: 2rem 1rem;
+            function handleMove(e) {
+                const rect = container.getBoundingClientRect();
+                const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
+                const position = ((x - rect.left) / rect.width) * 100;
+                
+                const boundedPosition = Math.min(Math.max(0, position), 100);
+                
+                modifiedImage.style.clipPath = `polygon(${boundedPosition}% 0, 100% 0, 100% 100%, ${boundedPosition}% 100%)`;
+                separator.style.left = `${boundedPosition}%`;
             }
 
-            .comparison-container {
-                height: 400px;
-            }
-        }
-    </style>
+            container.addEventListener('mousedown', () => {
+                container.addEventListener('mousemove', handleMove);
+                container.addEventListener('touchmove', handleMove);
+            });
 
-    <!-- Add this script before the closing body tag -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const containers = document.querySelectorAll('.comparison-container');
+            document.addEventListener('mouseup', () => {
+                container.removeEventListener('mousemove', handleMove);
+                container.removeEventListener('touchmove', handleMove);
+            });
 
-            containers.forEach(container => {
-                const modifiedImage = container.querySelector('.modified');
-                const separator = container.querySelector('.comparison-separator');
-
-                function handleMove(e) {
-                    const rect = container.getBoundingClientRect();
-                    const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
-                    const position = ((x - rect.left) / rect.width) * 100;
-                    
-                    const boundedPosition = Math.min(Math.max(0, position), 100);
-                    
-                    modifiedImage.style.clipPath = `polygon(${boundedPosition}% 0, 100% 0, 100% 100%, ${boundedPosition}% 100%)`;
-                    separator.style.left = `${boundedPosition}%`;
-                }
-
-                container.addEventListener('mousedown', () => {
-                    container.addEventListener('mousemove', handleMove);
-                    container.addEventListener('touchmove', handleMove);
-                });
-
-                document.addEventListener('mouseup', () => {
-                    container.removeEventListener('mousemove', handleMove);
-                    container.removeEventListener('touchmove', handleMove);
-                });
-
-                container.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    handleMove(e);
-                });
+            container.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                handleMove(e);
             });
         });
-    </script>
+    });
+
+    // Gallery and Modal Functionality with Enhanced macOS Dock Effect
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.querySelector('.gallery-container');
+        const slices = document.querySelectorAll('.gallery-slice');
+        const modal = document.querySelector('.image-modal');
+        const modalImg = document.querySelector('#modal-img');
+        const closeBtn = document.querySelector('.modal-close');
+        
+        // Enhanced MacOS Dock-like magnetic effect
+        function updateSlices(e) {
+            const containerRect = container.getBoundingClientRect();
+            const mouseX = e.clientX - containerRect.left;
+            
+            slices.forEach(slice => {
+                const sliceRect = slice.getBoundingClientRect();
+                const sliceCenterX = sliceRect.left + (sliceRect.width / 2) - containerRect.left;
+                const distance = Math.abs(mouseX - sliceCenterX);
+                const maxDistance = 500; // Increased for earlier activation
+                
+                if (distance < maxDistance) {
+                    const influence = Math.pow(1 - distance / maxDistance, 2);
+                    const scale = 1 + (0.8 * influence);
+                    const width = 60 + (380 * influence);
+                    
+                    slice.style.width = `${width}px`;
+                    slice.style.transform = `scale(${scale})`;
+                    slice.style.zIndex = Math.floor(influence * 10);
+                    slice.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+                } else {
+                    slice.style.width = '60px';
+                    slice.style.transform = 'scale(1)';
+                    slice.style.zIndex = 0;
+                    slice.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+                }
+            });
+        }
+
+        container.addEventListener('mousemove', updateSlices);
+        container.addEventListener('mouseleave', () => {
+            slices.forEach(slice => {
+                slice.style.width = '60px';
+                slice.style.transform = 'scale(1)';
+                slice.style.zIndex = 0;
+                slice.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Modal functionality
+        slices.forEach(slice => {
+            slice.addEventListener('click', () => {
+                const img = slice.querySelector('img');
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    modalImg.classList.add('show');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('show');
+            modalImg.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+        });
+    });
+
+    // FOMO Notifications System
+    document.addEventListener('DOMContentLoaded', () => {
+        const bookingNotifications = [
+            { icon: "📸", title: "Premium Package", text: "Just booked in Birmingham - $485" },
+            { icon: "📸", title: "Essential Package", text: "New shoot in Rochester Hills - $220" },
+            { icon: "🏠", title: "Signature Package", text: "Luxury home in Bloomfield - $425" },
+            { icon: "🚁", title: "Drone Add-on", text: "Aerial package in Troy - $70" },
+            { icon: "🌙", title: "Twilight Shoot", text: "Evening session in Novi - $50" },
+            { icon: "📸", title: "New Booking", text: "Full package in West Bloomfield" },
+            { icon: "🎥", title: "Video Tour", text: "3D capture in Ann Arbor - $125" },
+            { icon: "📸", title: "Just Booked", text: "Premium shoot in Grosse Pointe" },
+            { icon: "🏠", title: "New Client", text: "Essential package in Plymouth" },
+            { icon: "📸", title: "Rush Booking", text: "Same-day in Royal Oak +$45" },
+            { icon: "🎥", title: "3D Tour", text: "Matterport in Farmington Hills" },
+            { icon: "📸", title: "New Listing", text: "Condo shoot in Downtown Detroit" },
+            { icon: "🚁", title: "Drone Package", text: "Aerial views in Commerce" },
+            { icon: "📸", title: "Just Booked", text: "Waterfront home in Harrison Twp" },
+            { icon: "🏠", title: "New Booking", text: "Estate photos in Oakland Twp" }
+        ];
+
+        const deliveryNotifications = [
+            { icon: "✨", title: "Photos Delivered", text: "24hr turnaround in Birmingham" },
+            { icon: "✨", title: "Just Completed", text: "Luxury edit in Bloomfield Hills" },
+            { icon: "✨", title: "Ready for Download", text: "Gallery live in Rochester" },
+            { icon: "🎯", title: "Just Finished", text: "Virtual staging in Royal Oak" },
+            { icon: "✨", title: "Rush Delivery", text: "Same-day edit in Troy" },
+            { icon: "✨", title: "Photos Ready", text: "Premium edits in Northville" },
+            { icon: "✨", title: "Just Uploaded", text: "3D tour ready in Canton" },
+            { icon: "🎯", title: "Completed", text: "Twilight edits in Brighton" },
+            { icon: "✨", title: "Gallery Live", text: "40 photos in West Bloomfield" },
+            { icon: "✨", title: "Ready to View", text: "Full package in Ferndale" },
+            { icon: "✨", title: "Just Finished", text: "Drone footage in Commerce" },
+            { icon: "🎯", title: "Photos Ready", text: "Quick delivery to Plymouth" }
+        ];
+
+        const reviewNotifications = [
+            { icon: "⭐", title: "New 5-Star Review", text: "Perfect photos! - Sarah K." },
+            { icon: "⭐", title: "Client Review", text: "Exceeded expectations! - Tom B." },
+            { icon: "⭐", title: "Agent Feedback", text: "Amazing work as always! - Mike R." },
+            { icon: "⭐", title: "New Review", text: "Best in the business! - Lisa M." },
+            { icon: "⭐", title: "5-Star Rating", text: "Lightning fast delivery - John D." },
+            { icon: "⭐", title: "Client Feedback", text: "Worth every penny - Rachel S." },
+            { icon: "⭐", title: "New Review", text: "Stunning twilight shots - Mark W." }
+        ];
+
+        const referralNotifications = [
+            { icon: "🎁", title: "Referral Bonus", text: "Agent earned $50 credit in Troy" },
+            { icon: "💫", title: "Team Referral", text: "Group discount for Keller Williams" },
+            { icon: "🎁", title: "Agent Reward", text: "RE/MAX team earned free drone shots" },
+            { icon: "💫", title: "Partner Bonus", text: "Century 21 unlocked bulk pricing" },
+            { icon: "🎁", title: "Referral Credit", text: "Agent earned twilight session" }
+        ];
+
+        const rushNotifications = [
+            { icon: "⚡", title: "Rush Delivery", text: "Same-day edit in Birmingham" },
+            { icon: "🏃", title: "Express Service", text: "4-hour turnaround in Troy" },
+            { icon: "⚡", title: "Rush Order", text: "Next-day delivery in Rochester" }
+        ];
+
+        const successNotifications = [
+            { icon: "🏠", title: "Agent Success", text: "Sold in 24hrs - Birmingham" },
+            { icon: "💎", title: "Quick Sale", text: "Listed & sold in Bloomfield" },
+            { icon: "🎯", title: "Just Sold", text: "Above asking in Rochester" }
+        ];
+
+        const promoNotifications = [
+            { icon: "🔥", title: "Limited Time", text: "20% off twilight shoots" },
+            { icon: "💫", title: "New Agents", text: "First shoot discount" },
+            { icon: "🎉", title: "Special Offer", text: "Free drone with premium" }
+        ];
+
+        function getRandomNotification() {
+            const rand = Math.floor(Math.random() * 100);
+            
+            if (rand < 30) {
+                return bookingNotifications[Math.floor(Math.random() * bookingNotifications.length)];
+            } else if (rand < 55) {
+                return deliveryNotifications[Math.floor(Math.random() * deliveryNotifications.length)];
+            } else if (rand < 65) {
+                return reviewNotifications[Math.floor(Math.random() * reviewNotifications.length)];
+            } else if (rand < 75) {
+                return referralNotifications[Math.floor(Math.random() * referralNotifications.length)];
+            } else if (rand < 85) {
+                return rushNotifications[Math.floor(Math.random() * rushNotifications.length)];
+            } else if (rand < 95) {
+                return successNotifications[Math.floor(Math.random() * successNotifications.length)];
+            } else {
+                return promoNotifications[Math.floor(Math.random() * promoNotifications.length)];
+            }
+        }
+
+        const notificationElement = document.querySelector('.notification');
+        
+        function updateNotification() {
+            const data = getRandomNotification();
+            notificationElement.querySelector('.notification-icon').textContent = data.icon;
+            notificationElement.querySelector('.notification-title').textContent = data.title;
+            notificationElement.querySelector('.notification-text').textContent = data.text;
+            
+            notificationElement.style.animation = 'none';
+            notificationElement.offsetHeight;
+            notificationElement.style.animation = 'slideIn 10s linear';
+        }
+
+        updateNotification();
+        setInterval(updateNotification, 10000);
+    });
+</script>
 </body>
 </html>
