@@ -66,46 +66,26 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
+        ```css
+/* =====================
+   HERO SECTION
+===================== */
+.hero-container {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed from center */
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    padding-top: 50px; /* Added specific top padding */
+    overflow: hidden;
+}
 
-        /* =====================
-           HERO SECTION
-        ===================== */
-        .hero-container {
-            min-height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 20px;
-            overflow: hidden;
-        }
-```css
 @media screen and (max-width: 768px) {
     .hero-container {
-        min-height: 12vh;  /* Much more reduced */
-        padding: 5px;
-        margin-bottom: 0;
-    }
-    
-    .hero-content {
-        gap: 10px;  /* Adds specific spacing control */
-    }
-    
-    .glow-text {
-        font-size: clamp(2rem, 6vw, 3rem);
-        margin-bottom: 0;  /* Remove bottom margin completely */
-    }
-
-    .tagline {
-        font-size: 0.9rem;
-        margin-top: 0;  /* Remove top margin */
-    }
-    
-    /* Add specific control for "OUR WORK" spacing */
-    .section-title {
-        margin-top: 1rem;  /* Reduced from default */
-        margin-bottom: 1rem;
+        min-height: auto; /* Remove fixed height on mobile */
+        padding-top: 30px; /* Less padding on mobile */
     }
 }
 ```
