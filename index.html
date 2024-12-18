@@ -1,872 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Detroit Lens | Professional Real Estate Photography Metro Detroit</title>
-    <meta name="description" content="Premium real estate photography services in Metro Detroit. Specializing in residential, twilight, and drone photography for real estate agents and property managers.">
-    <meta name="keywords" content="real estate photography, Detroit photographer, twilight photos, drone photography, property photos, real estate marketing">
-    
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Detroit Lens | Real Estate Photography">
-    <meta property="og:description" content="Elevate your listings with professional real estate photography in Metro Detroit">
-    <meta property="og:type" content="website">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* =====================
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Detroit Lens | Professional Real Estate Photography Metro Detroit</title>
+  <meta name="description" content="Premium real estate photography services in Metro Detroit. Specializing in residential, twilight, and drone photography for real estate agents and property managers.">
+  <meta name="keywords" content="real estate photography, Detroit photographer, twilight photos, drone photography, property photos, real estate marketing">
+
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Detroit Lens | Real Estate Photography">
+  <meta property="og:description" content="Elevate your listings with professional real estate photography in Metro Detroit">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================
            GLOBAL STYLES
         ===================== */
-        :root {
-            --gradient-blue: #00e5ff;
-            --gradient-purple: #ff00ff;
-            --gradient-orange: #ff8c00;
-            --bg-dark: #000;
-            --text-light: rgba(255, 255, 255, 0.8);
-        }
-}
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    :root {
+      --gradient-blue: #00e5ff;
+      --gradient-purple: #ff00ff;
+      --gradient-orange: #ff8c00;
+      --bg-dark: #000;
+      --text-light: rgba(255, 255, 255, 0.8);
+    }
+    }
 
-        body {
-            background: var(--bg-dark);
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        ```css
-/* =====================
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-dark);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ```css
+
+    /* =====================
    HERO SECTION
 ===================== */
-.hero-container {
-    min-height: 60vh;  /* Make it full height for desktop */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;  /* This will create maximum spacing */
-    align-items: center;
-    position: relative;
-    padding: 40px;
-    padding-top: 180px;
-    overflow: hidden;
-}
-
-@media screen and (max-width: 768px) {
     .hero-container {
-        min-height: auto; /* Remove fixed height on mobile */
-        padding-top: 30px; /* Less padding on mobile */
+      min-height: 60vh;
+      /* Make it full height for desktop */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* This will create maximum spacing */
+      align-items: center;
+      position: relative;
+      padding: 40px;
+      padding-top: 180px;
+      overflow: hidden;
     }
-}
-```
-        .hero-bg {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(
-                circle at center,
-                rgba(0, 229, 255, 0.1) 0%,
-                rgba(255, 0, 255, 0.1) 45%,
-                rgba(255, 143, 0, 0.1) 100%
-            );
-            opacity: 0.4;
-            filter: blur(100px);
-            animation: rotate 20s linear infinite;
-            transform-origin: center;
-        }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
+    .tagline {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      opacity: 1;
+      color: white;
+    }
 
-        /* Apple Neon Gradient Glow Effect */
-        .glow-text {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-            position: relative;
-            margin-top: 120px;
-            margin-bottom: 20px;
-        }
+    .gradient-text {
+      background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-        .glow-text::before {
-            content: attr(data-text);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                var(--gradient-blue) 0%,
-                var(--gradient-blue) 10%,
-                var(--gradient-purple) 45%,
-                var(--gradient-orange) 80%,
-                var(--gradient-orange) 100%
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            filter: blur(8px) brightness(0.7);
-            z-index: 1;
-        }
+    @media screen and (max-width: 768px) {
+      .hero-container {
+        min-height: auto;
+        /* Remove fixed height on mobile */
+        padding-top: 30px;
+        /* Less padding on mobile */
+      }
+    }
 
-        .glow-text span {
-            background: linear-gradient(
-                90deg,
-                var(--gradient-blue) 0%,
-                var(--gradient-blue) 10%,
-                var(--gradient-purple) 45%,
-                var(--gradient-orange) 80%,
-                var(--gradient-orange) 100%
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-            z-index: 2;
-            filter: brightness(1.2);
-        }
+    ``` .hero-bg {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center,
+          rgba(0, 229, 255, 0.1) 0%,
+          rgba(255, 0, 255, 0.1) 45%,
+          rgba(255, 143, 0, 0.1) 100%);
+      opacity: 0.4;
+      filter: blur(100px);
+      animation: rotate 20s linear infinite;
+      transform-origin: center;
+    }
 
-        .tagline {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 0.3s;
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
 
-        /* =====================
+    /* Apple Neon Gradient Glow Effect */
+    .glow-text {
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      position: relative;
+      margin-top: 120px;
+      margin-bottom: 20px;
+    }
+
+    .glow-text::before {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          var(--gradient-blue) 0%,
+          var(--gradient-blue) 10%,
+          var(--gradient-purple) 45%,
+          var(--gradient-orange) 80%,
+          var(--gradient-orange) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: blur(8px) brightness(0.7);
+      z-index: 1;
+    }
+
+    .glow-text span {
+      background: linear-gradient(90deg,
+          var(--gradient-blue) 0%,
+          var(--gradient-blue) 10%,
+          var(--gradient-purple) 45%,
+          var(--gradient-orange) 80%,
+          var(--gradient-orange) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      z-index: 2;
+      filter: brightness(1.2);
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.3s;
+    }
+
+    /* =====================
            FOMO NOTIFICATIONS
         ===================== */
-        .notification-section {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 300px;
-            z-index: 1000;
-        }
+    .notification-section {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 300px;
+      z-index: 1000;
+    }
 
-        .notification {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transform: translateX(120%);
-            opacity: 0;
-            animation: slideIn 10s linear;
-        }
+    .notification {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transform: translateX(120%);
+      opacity: 0;
+      animation: slideIn 10s linear;
+    }
 
-        .notification-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            background: linear-gradient(
-                45deg,
-                var(--gradient-blue),
-                var(--gradient-purple)
-            );
-        }
+    .notification-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: linear-gradient(45deg,
+          var(--gradient-blue),
+          var(--gradient-purple));
+    }
 
-        .notification-content {
-            flex-grow: 1;
-        }
+    .notification-content {
+      flex-grow: 1;
+    }
 
-        .notification-title {
-            font-weight: 500;
-            margin-bottom: 4px;
-            background: linear-gradient(
-                90deg,
-                var(--gradient-blue),
-                var(--gradient-purple)
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+    .notification-title {
+      font-weight: 500;
+      margin-bottom: 4px;
+      background: linear-gradient(90deg,
+          var(--gradient-blue),
+          var(--gradient-purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-        .notification-text {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+    .notification-text {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
 
-        /* =====================
+    /* =====================
            PORTFOLIO SECTION
         ===================== */
-        .portfolio-section {
-            padding: 4rem 2rem;
-            background: var(--bg-dark);
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 3.5rem;
-        }
-
-        .slider-container {
-            max-width: 100%;
-            margin: 0 auto;
-            display: flex;
-            gap: 2rem;
-            padding: 0 2rem;
-            flex-wrap: nowrap;
-            justify-content: center;
-        }
-
-        .comparison-slider {
-            flex: 1;
-            max-width: 400px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .comparison-slider:hover {
-            transform: scale(1.02);
-        }
-
-        .comparison-slider h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .comparison-container {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: col-resize;
-        }
-
-        .comparison-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .comparison-image.modified {
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-        }
-
-        .comparison-separator {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-blue);
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        .comparison-separator::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-blue);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .slider-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .comparison-slider {
-                max-width: 100%;
-            }
-            
-            .comparison-container {
-                height: 400px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Background Effects -->
-    <div class="background-effects">
-        <div class="gradient-orb cyan"></div>
-        <div class="gradient-orb magenta"></div>
-        <div class="gradient-orb orange"></div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero-container">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="glow-text" data-text="DETROIT LENS">
-                <span>DETROIT LENS</span>
-            </div>
-            <div class="tagline">ELEVATE YOUR LISTINGS. AMPLIFY YOUR BRAND.</div>
-        </div>
-        <!-- Add booking button -->
-      <style>
-      .booking-btn-custom {
-          display: inline-block;
-          padding: 15px 30px;
-          background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
-          color: white;
-          text-decoration: none;
-          font-family: 'Poppins', sans-serif;
-          font-size: 18px;
-          border-radius: 8px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          text-align: center;
-          margin: 20px auto;
-          border: none;
-          cursor: pointer;
-      }
-
-      .booking-btn-custom:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0, 229, 255, 0.3);
-      }
-      </style>
-
-      <div style="text-align: center;">
-          <a href="https://order-167822656.listvt.com" target="_blank" class="booking-btn-custom">Book Your Photo Shoot</a>
-      </div>
-    </section>
-
-    <!-- FOMO Notifications -->
-    <div class="notification-section">
-        <div class="notification">
-            <div class="notification-icon">📸</div>
-            <div class="notification-content">
-                <div class="notification-title">Loading...</div>
-                <div class="notification-text">Initializing notifications...</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio-section">
-        <h2 class="section-title glow-text" data-text="OUR WORK">
-            <span>Check Out The Difference Below</span>
-        </h2>
-        
-        <!-- Comparison Sliders -->
-        <div class="slider-container">
-            <!-- Still Photos -->
-            <div class="comparison-slider">
-                <h3>Still Photos</h3>
-                <div class="comparison-container">
-                    <img class="comparison-image original" src="https://i.ibb.co/ZhFVpdG/Before-Example.jpg" alt="Before HDR">
-                    <div class="comparison-separator"></div>
-                    <img class="comparison-image modified" src="https://i.ibb.co/vQcVhV0/After-Example.jpg" alt="After HDR">
-                </div>
-            </div>
-
-            <!-- Virtual Staging -->
-            <div class="comparison-slider">
-                <h3>Virtual Staging</h3>
-                <div class="comparison-container">
-                    <img class="comparison-image original" src="https://i.ibb.co/b5jGH1K/DSC09295.jpg" alt="Before Staging">
-                    <div class="comparison-separator"></div>
-                    <img class="comparison-image modified" src="https://i.ibb.co/bb2cjqs/DSC09295-VS.jpg" alt="After Staging">
-                </div>
-            </div>
-
-            <!-- Twilight -->
-            <div class="comparison-slider">
-                <h3>Twilight Photography</h3>
-                <div class="comparison-container">
-                    <img class="comparison-image original" src="https://i.ibb.co/hWC2ryC/DJI-0817.jpg" alt="Before Twilight">
-                    <div class="comparison-separator"></div>
-                    <img class="comparison-image modified" src="https://i.ibb.co/PQ17CNJ/dji-0817-twilight.jpg" alt="After Twilight">
-                </div>
-            </div>
-        </div>
-    </section>
-  <!-- Recent Work Gallery Section -->
-<style>
-    /* =====================
-       RECENT WORK GALLERY
-    ===================== */
-    .recent-work-gallery {
-        background: transparent;
-        min-height: 100vh;
-        padding: 1rem 0;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
+    .portfolio-section {
+      padding: 4rem 2rem;
+      background: var(--bg-dark);
+      position: relative;
+      z-index: 1;
     }
 
-    .gallery-title {
-        font-size: 3.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        font-weight: bold;
-        position: relative;
-        color: white;
-        transition: filter 0.3s ease;
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+      font-size: 3.5rem;
     }
 
-    .gallery-title:hover {
-        filter: brightness(1.5);
+    .slider-container {
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      padding: 0 2rem;
+      flex-wrap: nowrap;
+      justify-content: center;
     }
 
-    .gallery-container {
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        position: relative;
-        cursor: grab;
+    .comparison-slider {
+      flex: 1;
+      max-width: 400px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
-    .gallery-container::-webkit-scrollbar {
-        display: none;
+    .comparison-slider:hover {
+      transform: scale(1.02);
     }
 
-    .gallery-track {
-        display: flex;
-        gap: 4px;
-        padding: 0 2rem;
-        margin-left: 50%;
-        transform: translateX(-50%);
+    .comparison-slider h3 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
     }
 
-    .gallery-slice {
-        width: 60px;
-        height: 70vh;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-radius: 4px;
-        background: #111;
-        transform-origin: center;
+    .comparison-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: col-resize;
     }
 
-    .gallery-slice img {
-        height: 100%;
-        width: 400px;
-        max-width: none;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        object-fit: cover;
+    .comparison-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .image-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 1000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+    .comparison-image.modified {
+      clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
     }
 
-    .image-modal.show {
-        opacity: 1;
+    .comparison-separator {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-blue);
+      transform: translateX(-50%);
+      z-index: 1;
     }
 
-    .modal-close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: #fff;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .modal-content {
-        max-width: 90%;
-        max-height: 90vh;
-        margin: auto;
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .modal-content.show {
-        opacity: 1;
+    .comparison-separator::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-blue);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
     }
 
     @media (max-width: 768px) {
-        .gallery-slice {
-            height: 60vh;
-        }
-        .gallery-title {
-            font-size: 2.5rem;
-        }
+      .slider-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .comparison-slider {
+        max-width: 100%;
+      }
+
+      .comparison-container {
+        height: 400px;
+      }
     }
-</style>
+  </style>
+</head>
 
-<section class="recent-work-gallery">
-    <h2 class="gallery-title">RECENT WORK</h2>
-    
-    <div class="gallery-container">
-        <div class="gallery-track">
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/GtNyT9fb/DJI-0007-v2.jpg" alt="Real Estate Photo 1">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/hGg7dk2Q/DJI-0014-2.jpg" alt="Real Estate Photo 2">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/tRmPMm48/DJI-0398.jpg" alt="Real Estate Photo 3">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Kv6TZkLN/DJI-0466.jpg" alt="Real Estate Photo 4">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/WbFrL6Dz/DJI-0579.jpg" alt="Real Estate Photo 5">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/xC1JsKD0/DJI-0715.jpg" alt="Real Estate Photo 6">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/KzpKCRxt/DJI-0817.jpg" alt="Real Estate Photo 7">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/jjXnQM1g/dji-0817-twilight.jpg" alt="Real Estate Photo 8">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Fz2Ys8fR/DJI-0930.jpg" alt="Real Estate Photo 9">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/vT11ybZk/DJI-0964-twilight-2.jpg" alt="Real Estate Photo 10">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/qBYhLhmT/DJI-0979.jpg" alt="Real Estate Photo 11">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/ncDswF5Q/DSC00122-2.jpg" alt="Real Estate Photo 12">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/wjYtKK84/dsc02215-2.jpg" alt="Real Estate Photo 13">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/QMXHtpMp/DSC02225-2.jpg" alt="Real Estate Photo 14">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Nj8KBNQs/dsc02270-3.jpg" alt="Real Estate Photo 15">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/VND5bdS2/DSC02290-2.jpg" alt="Real Estate Photo 16">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/0QjjGPDj/DSC03000.jpg" alt="Real Estate Photo 17">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Rhn08dPz/DSC03260.jpg" alt="Real Estate Photo 18">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/50r0nTS3/DSC03448.jpg" alt="Real Estate Photo 19">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/YjKSwFVL/DSC03695.jpg" alt="Real Estate Photo 20">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/dQ7mwKpJ/DSC04171-2.jpg" alt="Real Estate Photo 21">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/ZY1PqMzp/DSC04218.jpg" alt="Real Estate Photo 22">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/sD7YG438/DSC04228.jpg" alt="Real Estate Photo 23">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/bwPQxSJv/dsc04644-3.jpg" alt="Real Estate Photo 24">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/CKLktybT/dsc06019-2.jpg" alt="Real Estate Photo 25">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/vmqfwPv1/DSC06062-2.jpg" alt="Real Estate Photo 26">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/7657HgBK/DSC06168-2.jpg" alt="Real Estate Photo 27">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/7h727qr7/DSC08336-2.jpg" alt="Real Estate Photo 28">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/MZjRgmfT/DSC08406-2.jpg" alt="Real Estate Photo 29">
-            </div>
-            <div class="gallery-slice" tabindex="0">
-                <img src="https://i.postimg.cc/Y9TFhhZM/DSC08828-2.jpg" alt="Real Estate Photo 30">
-            </div>
+<body>
+  <!-- Background Effects -->
+  <div class="background-effects">
+    <div class="gradient-orb cyan"></div>
+    <div class="gradient-orb magenta"></div>
+    <div class="gradient-orb orange"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero-content">
+    <div class="glow-text" data-text="DETROIT LENS">
+      <span>DETROIT LENS</span>
+      <h2 style="color: white; font-size: 1.5rem; letter-spacing: 2px; margin: 20px 0; text-align: center; font-family: 'Poppins', sans-serif;">
+        ELEVATE YOUR LISTINGS. <span style="background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00); -webkit-background-clip: text; background-clip: text; color: transparent;">AMPLIFY</span> YOUR BRAND.
+      </h2>
+      </section>
+      <a href="https://order-16782656.listvt.com" target="_blank" style="display: inline-block; text-align: center; margin: 5px auto;">
+        <button style="
+        background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+        border: none;
+        color: white;
+        padding: 15px 40px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 25px;
+        display: inline-block;
+        margin: 5px auto;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-size: 200% 100%;
+        animation: gradient-shift 3s ease infinite;
+        transition: all 0.3s ease-in-out;
+    ">Book Your Photo Shoot</button>
+      </a>
+
+      <style>
+        @keyframes gradient-shift {
+          0% {
+            background-position: 0% 50%;
+          }
+
+          50% {
+            background-position: 100% 50%;
+          }
+
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      </style>
+
+      <!-- FOMO Notifications -->
+      <div class="notification-section">
+        <div class="notification">
+          <div class="notification-icon">📸</div>
+          <div class="notification-content">
+            <div class="notification-title">Loading...</div>
+            <div class="notification-text">Initializing notifications...</div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Full Image Modal -->
-    <div class="image-modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modal-img" src="" alt="Full size image">
-    </div>
-</section>
-  <script>
-    // Comparison Slider Functionality
-    document.addEventListener('DOMContentLoaded', () => {
-        const containers = document.querySelectorAll('.comparison-container');
+      <!-- Portfolio Section -->
+      <section class="portfolio-section">
+        <h2 class="section-title">
+          <span style="color: white !important; display: inline-block;">Check Out The Difference:</span>
+        </h2>
 
-        containers.forEach(container => {
+        <!-- Comparison Sliders -->
+        <div class="slider-container">
+          <!-- Still Photos -->
+          <div class="comparison-slider">
+            <h3>Still Photos</h3>
+            <div class="comparison-container">
+              <img class="comparison-image original" src="https://i.ibb.co/ZhFVpdG/Before-Example.jpg" alt="Before HDR">
+              <div class="comparison-separator"></div>
+              <img class="comparison-image modified" src="https://i.ibb.co/vQcVhV0/After-Example.jpg" alt="After HDR">
+            </div>
+          </div>
+
+          <!-- Virtual Staging -->
+          <div class="comparison-slider">
+            <h3>Virtual Staging</h3>
+            <div class="comparison-container">
+              <img class="comparison-image original" src="https://i.ibb.co/b5jGH1K/DSC09295.jpg" alt="Before Staging">
+              <div class="comparison-separator"></div>
+              <img class="comparison-image modified" src="https://i.ibb.co/bb2cjqs/DSC09295-VS.jpg" alt="After Staging">
+            </div>
+          </div>
+
+          <!-- Twilight -->
+          <div class="comparison-slider">
+            <h3>Twilight Photography</h3>
+            <div class="comparison-container">
+              <img class="comparison-image original" src="https://i.ibb.co/hWC2ryC/DJI-0817.jpg" alt="Before Twilight">
+              <div class="comparison-separator"></div>
+              <img class="comparison-image modified" src="https://i.ibb.co/PQ17CNJ/dji-0817-twilight.jpg" alt="After Twilight">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Recent Work Gallery Section -->
+      <style>
+        /* =====================
+       RECENT WORK GALLERY
+    ===================== */
+        .recent-work-gallery {
+          background: transparent;
+          min-height: 100vh;
+          padding: 0;
+          /* Already at 0 */
+          margin-top: -2rem;
+          /* Added negative margin to pull everything up */
+          overflow: hidden;
+          position: relative;
+          z-index: 1;
+        }
+
+        .gallery-title {
+          font-size: 3.5rem;
+          text-align: center;
+          margin-bottom: 0.25rem;
+          /* Reduced from 1rem to 0.25rem */
+          font-weight: bold;
+          position: relative;
+          color: white;
+          transition: filter 0.3s ease;
+        }
+
+        .gallery-title:hover {
+          filter: brightness(1.5);
+        }
+
+        .gallery-container {
+          height: 80vh;
+          display: flex;
+          align-items: center;
+          overflow-x: scroll;
+          overflow-y: hidden;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          position: relative;
+          cursor: grab;
+          margin-top: -3rem;
+          /* Added negative margin to pull just the gallery up */
+        }
+
+        .gallery-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        .gallery-track {
+          display: flex;
+          gap: 4px;
+          padding: 0 2rem;
+          margin-left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .gallery-slice {
+          width: 25px;
+          height: 40vh;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 4px;
+          background: #111;
+          transform-origin: center;
+        }
+
+        .gallery-slice img {
+          height: 100%;
+          width: 400px;
+          max-width: none;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          object-fit: cover;
+        }
+
+        .image-modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.9);
+          z-index: 1000;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .image-modal.show {
+          opacity: 1;
+        }
+
+        .modal-close {
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          color: #fff;
+          font-size: 40px;
+          font-weight: bold;
+          cursor: pointer;
+          z-index: 1001;
+        }
+
+        .modal-content {
+          max-width: 90%;
+          max-height: 90vh;
+          margin: auto;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .modal-content.show {
+          opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+          .gallery-slice {
+            height: 60vh;
+          }
+
+          .gallery-title {
+            font-size: 2.5rem;
+          }
+        }
+      </style>
+
+      <section class="recent-work-gallery">
+        <h2 class="gallery-title">RECENT WORK</h2>
+
+        <div class="gallery-container">
+          <div class="gallery-track">
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/GtNyT9fb/DJI-0007-v2.jpg" alt="Real Estate Photo 1">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/hGg7dk2Q/DJI-0014-2.jpg" alt="Real Estate Photo 2">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/tRmPMm48/DJI-0398.jpg" alt="Real Estate Photo 3">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/Kv6TZkLN/DJI-0466.jpg" alt="Real Estate Photo 4">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/WbFrL6Dz/DJI-0579.jpg" alt="Real Estate Photo 5">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/xC1JsKD0/DJI-0715.jpg" alt="Real Estate Photo 6">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/KzpKCRxt/DJI-0817.jpg" alt="Real Estate Photo 7">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/jjXnQM1g/dji-0817-twilight.jpg" alt="Real Estate Photo 8">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/Fz2Ys8fR/DJI-0930.jpg" alt="Real Estate Photo 9">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/vT11ybZk/DJI-0964-twilight-2.jpg" alt="Real Estate Photo 10">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/qBYhLhmT/DJI-0979.jpg" alt="Real Estate Photo 11">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/ncDswF5Q/DSC00122-2.jpg" alt="Real Estate Photo 12">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/wjYtKK84/dsc02215-2.jpg" alt="Real Estate Photo 13">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/QMXHtpMp/DSC02225-2.jpg" alt="Real Estate Photo 14">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/Nj8KBNQs/dsc02270-3.jpg" alt="Real Estate Photo 15">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/VND5bdS2/DSC02290-2.jpg" alt="Real Estate Photo 16">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/0QjjGPDj/DSC03000.jpg" alt="Real Estate Photo 17">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/Rhn08dPz/DSC03260.jpg" alt="Real Estate Photo 18">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/50r0nTS3/DSC03448.jpg" alt="Real Estate Photo 19">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/YjKSwFVL/DSC03695.jpg" alt="Real Estate Photo 20">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/dQ7mwKpJ/DSC04171-2.jpg" alt="Real Estate Photo 21">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/ZY1PqMzp/DSC04218.jpg" alt="Real Estate Photo 22">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/sD7YG438/DSC04228.jpg" alt="Real Estate Photo 23">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/bwPQxSJv/dsc04644-3.jpg" alt="Real Estate Photo 24">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/CKLktybT/dsc06019-2.jpg" alt="Real Estate Photo 25">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/vmqfwPv1/DSC06062-2.jpg" alt="Real Estate Photo 26">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/7657HgBK/DSC06168-2.jpg" alt="Real Estate Photo 27">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/7h727qr7/DSC08336-2.jpg" alt="Real Estate Photo 28">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/MZjRgmfT/DSC08406-2.jpg" alt="Real Estate Photo 29">
+            </div>
+            <div class="gallery-slice" tabindex="0">
+              <img src="https://i.postimg.cc/Y9TFhhZM/DSC08828-2.jpg" alt="Real Estate Photo 30">
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Image Modal -->
+        <div class="image-modal">
+          <span class="modal-close">&times;</span>
+          <img class="modal-content" id="modal-img" src="" alt="Full size image">
+        </div>
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+          <a href="https://order-16782656.listvt.com" target="_blank" style="display: inline-block; text-align: center; margin: 5px auto;">
+            <button style="
+            background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 5px auto;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            background-size: 200% 100%;
+            animation: gradient-shift 3s ease infinite;
+            transition: all 0.3s ease-in-out;
+        ">Book Your Photo Shoot</button>
+          </a>
+        </div>
+
+        <style>
+          @keyframes gradient-shift {
+            0% {
+              background-position: 0% 50%;
+            }
+
+            50% {
+              background-position: 100% 50%;
+            }
+
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+        </style>
+      </section>
+      <script>
+        // Comparison Slider Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+          const containers = document.querySelectorAll('.comparison-container');
+          containers.forEach(container => {
             const modifiedImage = container.querySelector('.modified');
             const separator = container.querySelector('.comparison-separator');
 
             function handleMove(e) {
-                const rect = container.getBoundingClientRect();
-                const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
-                const position = ((x - rect.left) / rect.width) * 100;
-                
-                const boundedPosition = Math.min(Math.max(0, position), 100);
-                
-                modifiedImage.style.clipPath = `polygon(${boundedPosition}% 0, 100% 0, 100% 100%, ${boundedPosition}% 100%)`;
-                separator.style.left = `${boundedPosition}%`;
+              const rect = container.getBoundingClientRect();
+              const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
+              const position = ((x - rect.left) / rect.width) * 100;
+              const boundedPosition = Math.min(Math.max(0, position), 100);
+              modifiedImage.style.clipPath = `polygon(${boundedPosition}% 0, 100% 0, 100% 100%, ${boundedPosition}% 100%)`;
+              separator.style.left = `${boundedPosition}%`;
             }
-
             container.addEventListener('mousedown', () => {
-                container.addEventListener('mousemove', handleMove);
-                container.addEventListener('touchmove', handleMove);
+              container.addEventListener('mousemove', handleMove);
+              container.addEventListener('touchmove', handleMove);
             });
-
             document.addEventListener('mouseup', () => {
-                container.removeEventListener('mousemove', handleMove);
-                container.removeEventListener('touchmove', handleMove);
+              container.removeEventListener('mousemove', handleMove);
+              container.removeEventListener('touchmove', handleMove);
             });
-
             container.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                handleMove(e);
+              e.preventDefault();
+              handleMove(e);
             });
+          });
         });
-    });
-
-    // Gallery and Modal Functionality with Enhanced macOS Dock Effect
-    document.addEventListener('DOMContentLoaded', function() {
-        const container = document.querySelector('.gallery-container');
-        const slices = document.querySelectorAll('.gallery-slice');
-        const modal = document.querySelector('.image-modal');
-        const modalImg = document.querySelector('#modal-img');
-        const closeBtn = document.querySelector('.modal-close');
-        
-        // Enhanced MacOS Dock-like magnetic effect
-        function updateSlices(e) {
+        // Gallery and Modal Functionality with Enhanced macOS Dock Effect
+        document.addEventListener('DOMContentLoaded', function() {
+          const container = document.querySelector('.gallery-container');
+          const slices = document.querySelectorAll('.gallery-slice');
+          const modal = document.querySelector('.image-modal');
+          const modalImg = document.querySelector('#modal-img');
+          const closeBtn = document.querySelector('.modal-close');
+          // Enhanced MacOS Dock-like magnetic effect
+          function updateSlices(e) {
             const containerRect = container.getBoundingClientRect();
             const mouseX = e.clientX - containerRect.left;
-            
             slices.forEach(slice => {
-                const sliceRect = slice.getBoundingClientRect();
-                const sliceCenterX = sliceRect.left + (sliceRect.width / 2) - containerRect.left;
-                const distance = Math.abs(mouseX - sliceCenterX);
-                const maxDistance = 500; // Increased for earlier activation
-                
-                if (distance < maxDistance) {
-                    const influence = Math.pow(1 - distance / maxDistance, 2);
-                    const scale = 1 + (0.8 * influence);
-                    const width = 60 + (380 * influence);
-                    
-                    slice.style.width = `${width}px`;
-                    slice.style.transform = `scale(${scale})`;
-                    slice.style.zIndex = Math.floor(influence * 10);
-                    slice.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
-                } else {
-                    slice.style.width = '60px';
-                    slice.style.transform = 'scale(1)';
-                    slice.style.zIndex = 0;
-                    slice.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
-                }
-            });
-        }
-
-        container.addEventListener('mousemove', updateSlices);
-        container.addEventListener('mouseleave', () => {
-            slices.forEach(slice => {
-                slice.style.width = '60px';
+              const sliceRect = slice.getBoundingClientRect();
+              const sliceCenterX = sliceRect.left + (sliceRect.width / 2) - containerRect.left;
+              const distance = Math.abs(mouseX - sliceCenterX);
+              const maxDistance = 500; // Increased for earlier activation
+              if (distance < maxDistance) {
+                const influence = Math.pow(1 - distance / maxDistance, 2);
+                const scale = 1 + (0.8 * influence);
+                const width = 25 + (380 * influence);
+                slice.style.width = `${width}px`;
+                slice.style.transform = `scale(${scale})`;
+                slice.style.zIndex = Math.floor(influence * 10);
+                slice.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+              } else {
+                slice.style.width = '25px';
                 slice.style.transform = 'scale(1)';
                 slice.style.zIndex = 0;
-                slice.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                slice.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+              }
             });
-        });
-
-        // Modal functionality
-        slices.forEach(slice => {
+          }
+          container.addEventListener('mousemove', updateSlices);
+          container.addEventListener('mouseleave', () => {
+            slices.forEach(slice => {
+              slice.style.width = '25px';
+              slice.style.transform = 'scale(1)';
+              slice.style.zIndex = 0;
+              slice.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+          });
+          // Modal functionality
+          slices.forEach(slice => {
             slice.addEventListener('click', () => {
-                const img = slice.querySelector('img');
-                modal.style.display = 'block';
-                modalImg.src = img.src;
-                setTimeout(() => {
-                    modal.classList.add('show');
-                    modalImg.classList.add('show');
-                }, 10);
-                document.body.style.overflow = 'hidden';
+              const img = slice.querySelector('img');
+              modal.style.display = 'block';
+              modalImg.src = img.src;
+              setTimeout(() => {
+                modal.classList.add('show');
+                modalImg.classList.add('show');
+              }, 10);
+              document.body.style.overflow = 'hidden';
             });
-        });
+          });
 
-        function closeModal() {
+          function closeModal() {
             modal.classList.remove('show');
             modalImg.classList.remove('show');
             setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
+              modal.style.display = 'none';
+              document.body.style.overflow = '';
             }, 300);
-        }
-
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
+          }
+          closeBtn.addEventListener('click', closeModal);
+          modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
-        });
-        document.addEventListener('keydown', (e) => {
+          });
+          document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+          });
         });
-    });
-
-    // FOMO Notifications System
-    document.addEventListener('DOMContentLoaded', () => {
-        const bookingNotifications = [
-            { icon: "📸", title: "Premium Package", text: "Just booked in Birmingham - $485" },
-            { icon: "📸", title: "Essential Package", text: "New shoot in Rochester Hills - $220" },
-            { icon: "🏠", title: "Signature Package", text: "Luxury home in Bloomfield - $425" },
-            { icon: "🚁", title: "Drone Add-on", text: "Aerial package in Troy - $70" },
-            { icon: "🌙", title: "Twilight Shoot", text: "Evening session in Novi - $50" },
-            { icon: "📸", title: "New Booking", text: "Full package in West Bloomfield" },
-            { icon: "🎥", title: "Video Tour", text: "3D capture in Ann Arbor - $125" },
-            { icon: "📸", title: "Just Booked", text: "Premium shoot in Grosse Pointe" },
-            { icon: "🏠", title: "New Client", text: "Essential package in Plymouth" },
-            { icon: "📸", title: "Rush Booking", text: "Same-day in Royal Oak +$45" },
-            { icon: "🎥", title: "3D Tour", text: "Matterport in Farmington Hills" },
-            { icon: "📸", title: "New Listing", text: "Condo shoot in Downtown Detroit" },
-            { icon: "🚁", title: "Drone Package", text: "Aerial views in Commerce" },
-            { icon: "📸", title: "Just Booked", text: "Waterfront home in Harrison Twp" },
-            { icon: "🏠", title: "New Booking", text: "Estate photos in Oakland Twp" }
-        ];
-
-        const deliveryNotifications = [
-            { icon: "✨", title: "Photos Delivered", text: "24hr turnaround in Birmingham" },
-            { icon: "✨", title: "Just Completed", text: "Luxury edit in Bloomfield Hills" },
-            { icon: "✨", title: "Ready for Download", text: "Gallery live in Rochester" },
-            { icon: "🎯", title: "Just Finished", text: "Virtual staging in Royal Oak" },
-            { icon: "✨", title: "Rush Delivery", text: "Same-day edit in Troy" },
-            { icon: "✨", title: "Photos Ready", text: "Premium edits in Northville" },
-            { icon: "✨", title: "Just Uploaded", text: "3D tour ready in Canton" },
-            { icon: "🎯", title: "Completed", text: "Twilight edits in Brighton" },
-            { icon: "✨", title: "Gallery Live", text: "40 photos in West Bloomfield" },
-            { icon: "✨", title: "Ready to View", text: "Full package in Ferndale" },
-            { icon: "✨", title: "Just Finished", text: "Drone footage in Commerce" },
-            { icon: "🎯", title: "Photos Ready", text: "Quick delivery to Plymouth" }
-        ];
-
-        const reviewNotifications = [
-            { icon: "⭐", title: "New 5-Star Review", text: "Perfect photos! - Sarah K." },
-            { icon: "⭐", title: "Client Review", text: "Exceeded expectations! - Tom B." },
-            { icon: "⭐", title: "Agent Feedback", text: "Amazing work as always! - Mike R." },
-            { icon: "⭐", title: "New Review", text: "Best in the business! - Lisa M." },
-            { icon: "⭐", title: "5-Star Rating", text: "Lightning fast delivery - John D." },
-            { icon: "⭐", title: "Client Feedback", text: "Worth every penny - Rachel S." },
-            { icon: "⭐", title: "New Review", text: "Stunning twilight shots - Mark W." }
-        ];
-
-        const referralNotifications = [
-            { icon: "🎁", title: "Referral Bonus", text: "Agent earned $50 credit in Troy" },
-            { icon: "💫", title: "Team Referral", text: "Group discount for Keller Williams" },
-            { icon: "🎁", title: "Agent Reward", text: "RE/MAX team earned free drone shots" },
-            { icon: "💫", title: "Partner Bonus", text: "Century 21 unlocked bulk pricing" },
-            { icon: "🎁", title: "Referral Credit", text: "Agent earned twilight session" }
-        ];
-
-        const rushNotifications = [
-            { icon: "⚡", title: "Rush Delivery", text: "Same-day edit in Birmingham" },
-            { icon: "🏃", title: "Express Service", text: "4-hour turnaround in Troy" },
-            { icon: "⚡", title: "Rush Order", text: "Next-day delivery in Rochester" }
-        ];
-
-        const successNotifications = [
-            { icon: "🏠", title: "Agent Success", text: "Sold in 24hrs - Birmingham" },
-            { icon: "💎", title: "Quick Sale", text: "Listed & sold in Bloomfield" },
-            { icon: "🎯", title: "Just Sold", text: "Above asking in Rochester" }
-        ];
-
-        const promoNotifications = [
-            { icon: "🔥", title: "Limited Time", text: "20% off twilight shoots" },
-            { icon: "💫", title: "New Agents", text: "First shoot discount" },
-            { icon: "🎉", title: "Special Offer", text: "Free drone with premium" }
-        ];
-
-        function getRandomNotification() {
-            const rand = Math.floor(Math.random() * 100);
-            
-            if (rand < 30) {
-                return bookingNotifications[Math.floor(Math.random() * bookingNotifications.length)];
-            } else if (rand < 55) {
-                return deliveryNotifications[Math.floor(Math.random() * deliveryNotifications.length)];
-            } else if (rand < 65) {
-                return reviewNotifications[Math.floor(Math.random() * reviewNotifications.length)];
-            } else if (rand < 75) {
-                return referralNotifications[Math.floor(Math.random() * referralNotifications.length)];
-            } else if (rand < 85) {
-                return rushNotifications[Math.floor(Math.random() * rushNotifications.length)];
-            } else if (rand < 95) {
-                return successNotifications[Math.floor(Math.random() * successNotifications.length)];
-            } else {
-                return promoNotifications[Math.floor(Math.random() * promoNotifications.length)];
+        // FOMO Notifications System
+        document.addEventListener('DOMContentLoaded', () => {
+          const bookingNotifications = [{
+              icon: "📸",
+              title: "Premium Package",
+              text: "Just booked in Birmingham - $485"
+            },
+            {
+              icon: "📸",
+              title: "Essential Package",
+              text: "New shoot in Rochester Hills - $220"
+            },
+            {
+              icon: "🏠",
+              title: "Signature Package",
+              text: "Luxury home in Bloomfield - $425"
+            },
+            {
+              icon: "🚁",
+              title: "Drone Add-on",
+              text: "Aerial package in Troy - $70"
+            },
+            {
+              icon: "🌙",
+              title: "Twilight Shoot",
+              text: "Evening session in Novi - $50"
+            },
+            {
+              icon: "📸",
+              title: "New Booking",
+              text: "Full package in West Bloomfield"
+            },
+            {
+              icon: "🎥",
+              title: "Video Tour",
+              text: "3D capture in Ann Arbor - $125"
+            },
+            {
+              icon: "📸",
+              title: "Just Booked",
+              text: "Premium shoot in Grosse Pointe"
+            },
+            {
+              icon: "🏠",
+              title: "New Client",
+              text: "Essential package in Plymouth"
+            },
+            {
+              icon: "📸",
+              title: "Rush Booking",
+              text: "Same-day in Royal Oak +$45"
+            },
+            {
+              icon: "🎥",
+              title: "3D Tour",
+              text: "Matterport in Farmington Hills"
+            },
+            {
+              icon: "📸",
+              title: "New Listing",
+              text: "Condo shoot in Downtown Detroit"
+            },
+            {
+              icon: "🚁",
+              title: "Drone Package",
+              text: "Aerial views in Commerce"
+            },
+            {
+              icon: "📸",
+              title: "Just Booked",
+              text: "Waterfront home in Harrison Twp"
+            },
+            {
+              icon: "🏠",
+              title: "New Booking",
+              text: "Estate photos in Oakland Twp"
             }
-        }
+          ];
+          const deliveryNotifications = [{
+              icon: "✨",
+              title: "Photos Delivered",
+              text: "24hr turnaround in Birmingham"
+            },
+            {
+              icon: "✨",
+              title: "Just Completed",
+              text: "Luxury edit in Bloomfield Hills"
+            },
+            {
+              icon: "✨",
+              title: "Ready for Download",
+              text: "Gallery live in Rochester"
+            },
+            {
+              icon: "🎯",
+              title: "Just Finished",
+              text: "Virtual staging in Royal Oak"
+            },
+            {
+              icon: "✨",
+              title: "Rush Delivery",
+              text: "Same-day edit in Troy"
+            },
+            {
+              icon: "✨",
+              title: "Photos Ready",
+              text: "Premium edits in Northville"
+            },
+            {
+              icon: "✨",
+              title: "Just Uploaded",
+              text: "3D tour ready in Canton"
+            },
+            {
+              icon: "🎯",
+              title: "Completed",
+              text: "Twilight edits in Brighton"
+            },
+            {
+              icon: "✨",
+              title: "Gallery Live",
+              text: "40 photos in West Bloomfield"
+            },
+            {
+              icon: "✨",
+              title: "Ready to View",
+              text: "Full package in Ferndale"
+            },
+            {
+              icon: "✨",
+              title: "Just Finished",
+              text: "Drone footage in Commerce"
+            },
+            {
+              icon: "🎯",
+              title: "Photos Ready",
+              text: "Quick delivery to Plymouth"
+            }
+          ];
+          const reviewNotifications = [{
+              icon: "⭐",
+              title: "New 5-Star Review",
+              text: "Perfect photos! - Sarah K."
+            },
+            {
+              icon: "⭐",
+              title: "Client Review",
+              text: "Exceeded expectations! - Tom B."
+            },
+            {
+              icon: "⭐",
+              title: "Agent Feedback",
+              text: "Amazing work as always! - Mike R."
+            },
+            {
+              icon: "⭐",
+              title: "New Review",
+              text: "Best in the business! - Lisa M."
+            },
+            {
+              icon: "⭐",
+              title: "5-Star Rating",
+              text: "Lightning fast delivery - John D."
+            },
+            {
+              icon: "⭐",
+              title: "Client Feedback",
+              text: "Worth every penny - Rachel S."
+            },
+            {
+              icon: "⭐",
+              title: "New Review",
+              text: "Stunning twilight shots - Mark W."
+            }
+          ];
+          const referralNotifications = [{
+              icon: "🎁",
+              title: "Referral Bonus",
+              text: "Agent earned $50 credit in Troy"
+            },
+            {
+              icon: "💫",
+              title: "Team Referral",
+              text: "Group discount for Keller Williams"
+            },
+            {
+              icon: "🎁",
+              title: "Agent Reward",
+              text: "RE/MAX team earned free drone shots"
+            },
+            {
+              icon: "💫",
+              title: "Partner Bonus",
+              text: "Century 21 unlocked bulk pricing"
+            },
+            {
+              icon: "🎁",
+              title: "Referral Credit",
+              text: "Agent earned twilight session"
+            }
+          ];
+          const rushNotifications = [{
+              icon: "⚡",
+              title: "Rush Delivery",
+              text: "Same-day edit in Birmingham"
+            },
+            {
+              icon: "🏃",
+              title: "Express Service",
+              text: "4-hour turnaround in Troy"
+            },
+            {
+              icon: "⚡",
+              title: "Rush Order",
+              text: "Next-day delivery in Rochester"
+            }
+          ];
+          const successNotifications = [{
+              icon: "🏠",
+              title: "Agent Success",
+              text: "Sold in 24hrs - Birmingham"
+            },
+            {
+              icon: "💎",
+              title: "Quick Sale",
+              text: "Listed & sold in Bloomfield"
+            },
+            {
+              icon: "🎯",
+              title: "Just Sold",
+              text: "Above asking in Rochester"
+            }
+          ];
+          const promoNotifications = [{
+              icon: "🔥",
+              title: "Limited Time",
+              text: "20% off twilight shoots"
+            },
+            {
+              icon: "💫",
+              title: "New Agents",
+              text: "First shoot discount"
+            },
+            {
+              icon: "🎉",
+              title: "Special Offer",
+              text: "Free drone with premium"
+            }
+          ];
 
-        const notificationElement = document.querySelector('.notification');
-        
-        function updateNotification() {
+          function getRandomNotification() {
+            const rand = Math.floor(Math.random() * 100);
+            if (rand < 30) {
+              return bookingNotifications[Math.floor(Math.random() * bookingNotifications.length)];
+            } else if (rand < 55) {
+              return deliveryNotifications[Math.floor(Math.random() * deliveryNotifications.length)];
+            } else if (rand < 65) {
+              return reviewNotifications[Math.floor(Math.random() * reviewNotifications.length)];
+            } else if (rand < 75) {
+              return referralNotifications[Math.floor(Math.random() * referralNotifications.length)];
+            } else if (rand < 85) {
+              return rushNotifications[Math.floor(Math.random() * rushNotifications.length)];
+            } else if (rand < 95) {
+              return successNotifications[Math.floor(Math.random() * successNotifications.length)];
+            } else {
+              return promoNotifications[Math.floor(Math.random() * promoNotifications.length)];
+            }
+          }
+          const notificationElement = document.querySelector('.notification');
+
+          function updateNotification() {
             const data = getRandomNotification();
             notificationElement.querySelector('.notification-icon').textContent = data.icon;
             notificationElement.querySelector('.notification-title').textContent = data.title;
             notificationElement.querySelector('.notification-text').textContent = data.text;
-            
             notificationElement.style.animation = 'none';
             notificationElement.offsetHeight;
             notificationElement.style.animation = 'slideIn 10s linear';
-        }
-
-        updateNotification();
-        setInterval(updateNotification, 10000);
-    });
-</script>
+          }
+          updateNotification();
+          setInterval(updateNotification, 10000);
+        });
+      </script>
 </body>
+
 </html>
