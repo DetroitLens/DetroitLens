@@ -45,6 +45,103 @@
     }
 
     ```css
+<style>
+  /* =====================
+        GLOBAL MOBILE STYLES
+  ===================== */
+  @media screen and (max-width: 768px) {
+    /* Hero Section */
+    .hero-container {
+      padding-top: 40px; /* Reduced padding for smaller devices */
+      min-height: auto;
+      /* Remove fixed height */
+    }
+
+    .glow-text {
+      font-size: clamp(3rem, 10vw, 6rem); /* Adjust font size for better readability */
+      margin-top: 100px;
+    }
+
+    .hero-content h2 {
+      font-size: clamp(1.2rem, 4vw, 2rem); /* Adjust size for smaller devices */
+    }
+
+    .tagline {
+      font-size: 1rem; /* Adjust tagline font for mobile */
+      opacity: 1;
+    }
+
+    /* Portfolio Section */
+    .slider-container {
+      display: flex;
+      flex-direction: column; /* Stack the images vertically on small screens */
+      align-items: center;
+    }
+
+    .comparison-slider {
+      max-width: 100%;
+      /* Ensure sliders fill available width */
+      margin-bottom: 20px;
+    }
+
+    .comparison-container {
+      height: 300px; /* Adjust height for mobile */
+    }
+
+    /* Recent Work Gallery */
+    .gallery-container {
+      flex-direction: column; /* Stack gallery items on smaller screens */
+    }
+
+    .gallery-slice {
+      width: 100%;
+      height: 60vh; /* Adjust image size for mobile */
+    }
+
+    .gallery-slice img {
+      object-fit: contain; /* Ensure images maintain aspect ratio on mobile */
+    }
+
+    /* Contact Form */
+    form {
+      padding: 20px;
+      max-width: 100%;
+      margin: 0 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem; /* Slightly smaller text for mobile */
+    }
+
+    button[type="submit"] {
+      padding: 12px 30px;
+      font-size: 14px;
+      width: 100%; /* Make submit button stretch full width */
+    }
+
+    /* Make contact section more readable */
+    .winking-face {
+      font-size: 3rem; /* Adjust winking face size */
+    }
+
+    /* FOMO Notifications */
+    .notification-section {
+      top: 15px; /* Adjust notification position for mobile */
+      right: 10px;
+      width: 250px; /* Make notifications smaller on mobile */
+    }
+  }
+
+  /* =====================
+        MOBILE FORM FIELD STYLING
+  ===================== */
+  input, textarea {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+</style>
 
     /* =====================
    HERO SECTION
