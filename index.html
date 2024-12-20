@@ -27,6 +27,10 @@
       --gradient-orange: #ff8c00;
       --bg-dark: #000;
       --text-light: rgba(255, 255, 255, 0.8);
+       /* Add these new variables */
+      --mobile-padding: 15px;
+      --mobile-header-height: 60px;
+      --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
     }
     }
 .background-effects {
@@ -375,6 +379,101 @@ opacity: 0.3; → opacity: 0.4;
         height: 400px;
       }
     }
+/* Mobile Optimization Styles */
+@media screen and (max-width: 768px) {
+  /* Hero Section Mobile Adjustments */
+  .hero-content {
+    padding: 20px;
+  }
+  
+  .glow-text {
+    font-size: clamp(2rem, 8vw, 4rem);
+    margin-top: 60px;
+  }
+  
+  h2 {
+    font-size: 1.2rem !important;
+    margin: 15px 0 !important;
+  }
+
+  /* Button Mobile Adjustments */
+  button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 30px !important;
+  }
+
+  /* Portfolio Section Mobile Adjustments */
+  .portfolio-section {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Comparison Slider Mobile Optimization */
+  .comparison-container {
+    height: 250px;
+  }
+
+  /* Gallery Mobile Optimization */
+  .gallery-container {
+    height: 60vh;
+    margin-top: -100px;
+  }
+
+  .gallery-slice {
+    height: 30vh;
+  }
+
+  /* FOMO Notifications Mobile Adjustment */
+  .notification-section {
+    width: calc(100% - 20px);
+    max-width: 300px;
+  }
+  
+  .notification {
+    padding: 10px;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .hero-content {
+    padding: 15px;
+  }
+
+  .glow-text {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    margin-top: 40px;
+  }
+
+  .comparison-container {
+    height: 200px;
+  }
+
+  .gallery-container {
+    height: 50vh;
+  }
+
+  .gallery-slice {
+    height: 25vh;
+  }
+}
+
+/* Fix for Notch Phones */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .hero-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .gallery-container {
+    height: 80vh;
+  }
+}
   </style>
 </head>
 
