@@ -27,10 +27,6 @@
       --gradient-orange: #ff8c00;
       --bg-dark: #000;
       --text-light: rgba(255, 255, 255, 0.8);
-       /* Add these new variables */
-      --mobile-padding: 15px;
-      --mobile-header-height: 60px;
-      --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
     }
     }
 .background-effects {
@@ -379,149 +375,6 @@ opacity: 0.3; → opacity: 0.4;
         height: 400px;
       }
     }
-/* Mobile Grid Gallery Base Styles */
-.mobile-grid-gallery {
-    display: none; /* Hidden by default */
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-    .slider-container {
-        display: none !important; /* Force hide sliders on mobile */
-    }
-    
-    .mobile-grid-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 15px;
-    }
-    
-    .grid-item {
-        position: relative;
-        aspect-ratio: 1;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    .grid-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-    }
-
-    .grid-label {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0,0,0,0.7);
-        color: white;
-        padding: 8px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .grid-item:active .grid-image {
-        transform: scale(1.05);
-    }
-}
-@media screen and (max-width: 768px) {
-  /* Hero Section Mobile Adjustments */
-  .hero-content {
-    padding: 20px;
-  }
-  
-  .glow-text {
-    font-size: clamp(2rem, 8vw, 4rem);
-    margin-top: 60px;
-  }
-  
-  h2 {
-    font-size: 1.2rem !important;
-    margin: 15px 0 !important;
-  }
-
-  /* Button Mobile Adjustments */
-  button {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px 30px !important;
-  }
-
-  /* Portfolio Section Mobile Adjustments */
-  .portfolio-section {
-    padding: 2rem 1rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  /* Comparison Slider Mobile Optimization */
-  .comparison-container {
-    height: 250px;
-  }
-
-  /* Gallery Mobile Optimization */
-  .gallery-container {
-    height: 60vh;
-    margin-top: -100px;
-  }
-
-  .gallery-slice {
-    height: 30vh;
-  }
-
-  /* FOMO Notifications Mobile Adjustment */
-  .notification-section {
-    width: calc(100% - 20px);
-    max-width: 300px;
-  }
-  
-  .notification {
-    padding: 10px;
-  }
-}
-
-/* Small Mobile Devices */
-@media screen and (max-width: 480px) {
-  .hero-content {
-    padding: 15px;
-  }
-
-  .glow-text {
-    font-size: clamp(1.8rem, 7vw, 3rem);
-    margin-top: 40px;
-  }
-
-  .comparison-container {
-    height: 200px;
-  }
-
-  .gallery-container {
-    height: 50vh;
-  }
-
-  .gallery-slice {
-    height: 25vh;
-  }
-}
-
-/* Fix for Notch Phones */
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .hero-content {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  .gallery-container {
-    height: 80vh;
-  }
- 
   </style>
 </head>
 
@@ -604,6 +457,7 @@ opacity: 0.3; → opacity: 0.4;
               <img class="comparison-image modified" src="https://i.ibb.co/vQcVhV0/After-Example.jpg" alt="After HDR">
             </div>
           </div>
+
           <!-- Virtual Staging -->
           <div class="comparison-slider">
             <h3>Virtual Staging</h3>
@@ -624,38 +478,6 @@ opacity: 0.3; → opacity: 0.4;
             </div>
           </div>
         </div>
-        <!-- Mobile Grid Gallery -->
-<div class="mobile-grid-gallery">
-    <!-- Still Photos -->
-    <div class="grid-item">
-        <img src="https://i.ibb.co/ZhFVpdG/Before-Example.jpg" alt="Before HDR" class="grid-image">
-        <div class="grid-label">Before</div>
-    </div>
-    <div class="grid-item">
-        <img src="https://i.ibb.co/vQcVhV0/After-Example.jpg" alt="After HDR" class="grid-image">
-        <div class="grid-label">After</div>
-    </div>
-    
-    <!-- Virtual Staging -->
-    <div class="grid-item">
-        <img src="https://i.ibb.co/b5jGH1K/DSC09295.jpg" alt="Before Staging" class="grid-image">
-        <div class="grid-label">Before</div>
-    </div>
-    <div class="grid-item">
-        <img src="https://i.ibb.co/bb2cjqs/DSC09295-VS.jpg" alt="After Staging" class="grid-image">
-        <div class="grid-label">After</div>
-    </div>
-    
-    <!-- Twilight -->
-    <div class="grid-item">
-        <img src="https://i.ibb.co/hWC2ryC/DJI-0817.jpg" alt="Before Twilight" class="grid-image">
-        <div class="grid-label">Before</div>
-    </div>
-    <div class="grid-item">
-        <img src="https://i.ibb.co/PQ17CNJ/dji-0817-twilight.jpg" alt="After Twilight" class="grid-image">
-        <div class="grid-label">After</div>
-    </div>
-</div>
       </section>
       <!-- Recent Work Gallery Section -->
       <style>
