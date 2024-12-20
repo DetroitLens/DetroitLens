@@ -473,6 +473,57 @@ opacity: 0.3; → opacity: 0.4;
   .gallery-container {
     height: 80vh;
   }
+  /* Mobile Grid Gallery Styles */
+@media screen and (max-width: 768px) {
+    /* Hide slider on mobile */
+    .slider-container {
+        display: none;
+    }
+
+    /* Show grid container on mobile */
+    .mobile-grid-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+  .grid-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.grid-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.grid-item:active .grid-image {
+    transform: scale(1.05);
+}
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+    .mobile-grid-gallery {
+        display: none;
+    }
 }
   </style>
 </head>
@@ -556,7 +607,38 @@ opacity: 0.3; → opacity: 0.4;
               <img class="comparison-image modified" src="https://i.ibb.co/vQcVhV0/After-Example.jpg" alt="After HDR">
             </div>
           </div>
-
+<!-- Mobile Grid Gallery -->
+<div class="mobile-grid-gallery">
+    <!-- Still Photos -->
+    <div class="grid-item">
+        <img src="https://i.ibb.co/ZhFVpdG/Before-Example.jpg" alt="Before HDR" class="grid-image">
+        <div class="grid-label">Before</div>
+    </div>
+    <div class="grid-item">
+        <img src="https://i.ibb.co/vQcVhV0/After-Example.jpg" alt="After HDR" class="grid-image">
+        <div class="grid-label">After</div>
+    </div>
+    
+    <!-- Virtual Staging -->
+    <div class="grid-item">
+        <img src="https://i.ibb.co/b5jGH1K/DSC09295.jpg" alt="Before Staging" class="grid-image">
+        <div class="grid-label">Before</div>
+    </div>
+    <div class="grid-item">
+        <img src="https://i.ibb.co/bb2cjqs/DSC09295-VS.jpg" alt="After Staging" class="grid-image">
+        <div class="grid-label">After</div>
+    </div>
+    
+    <!-- Twilight -->
+    <div class="grid-item">
+        <img src="https://i.ibb.co/hWC2ryC/DJI-0817.jpg" alt="Before Twilight" class="grid-image">
+        <div class="grid-label">Before</div>
+    </div>
+    <div class="grid-item">
+        <img src="https://i.ibb.co/PQ17CNJ/dji-0817-twilight.jpg" alt="After Twilight" class="grid-image">
+        <div class="grid-label">After</div>
+    </div>
+</div>
           <!-- Virtual Staging -->
           <div class="comparison-slider">
             <h3>Virtual Staging</h3>
