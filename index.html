@@ -20,7 +20,7 @@
   <style>
     /* =====================
            GLOBAL STYLES
-        ===================== */
+        ===================== */    
     :root {
       --gradient-blue: #00e5ff;
       --gradient-purple: #ff00ff;
@@ -35,7 +35,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
     overflow: hidden;
 }
@@ -43,15 +43,15 @@
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.3;
+    filter: blur(100px); → filter: blur(150px);
+opacity: 0.3; → opacity: 0.4;
     z-index: 0;
 }
 
 .cyan {
     background: #00e5ff;
-    width: 500px;
-    height: 500px;
+   width: 500px; → width: 800px;
+  height: 500px; → height: 800px;
     top: 15%;
     left: 15%;
     animation: float 8s ease-in-out infinite;
@@ -59,8 +59,8 @@
 
 .magenta {
     background: #ff00ff;
-    width: 600px;
-    height: 600px;
+    width: 600px; → width: 900px;
+    height: 600px; → height: 900px;
     top: 40%;
     right: 15%;
     animation: float 9s ease-in-out infinite;
@@ -68,10 +68,10 @@
 
 .orange {
     background: #ff8c00;
-    width: 450px;
-    height: 450px;
-    bottom: 15%;
-    left: 25%;
+    width: 700px;
+    height: 700px;
+    bottom: 10%;
+    left: 20%;
     animation: float 7s ease-in-out infinite;
 }
 
