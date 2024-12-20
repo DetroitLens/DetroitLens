@@ -1,0 +1,30 @@
+<form action="https://formsubmit.co/hello@DetroitLens.com" method="POST">
+    <!-- FormSubmit honeypot field -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Disable Captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Specify redirect after submission -->
+    <input type="hidden" name="_next" value="https://detroitlens.com/thank-you">
+
+    <!-- Name Field -->
+    <div>
+        <input type="text" name="name" placeholder="Your name" required>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+        <input type="email" name="email" placeholder="Your email address" required>
+    </div>
+
+    <!-- Message Field -->
+    <div>
+        <textarea name="message" placeholder="Your message" required></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+        <button type="submit">SUBMIT</button>
+    </div>
+</form>
