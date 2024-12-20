@@ -1,30 +1,161 @@
-<form action="https://formsubmit.co/hello@DetroitLens.com" method="POST">
-    <!-- FormSubmit honeypot field -->
-    <input type="text" name="_honey" style="display:none">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Detroit Lens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    <!-- Disable Captcha -->
-    <input type="hidden" name="_captcha" value="false">
+        .contact-container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+        }
 
-    <!-- Specify redirect after submission -->
-    <input type="hidden" name="_next" value="https://detroitlens.com/thank-you">
+        .contact-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+        }
 
-    <!-- Name Field -->
-    <div>
-        <input type="text" name="name" placeholder="Your name" required>
+        .contact-title::before {
+            content: "Contact Us";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: blur(8px) brightness(1.5);
+            z-index: 1;
+        }
+
+        .contact-title span {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+            background-size: 200% 100%;
+            animation: gradient-shift 3s ease infinite;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00);
+            background-size: 200% 100%;
+            animation: gradient-shift 3s ease infinite;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        .submit-button:hover {
+            transform: scale(1.02);
+            filter: brightness(1.2);
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h1 class="contact-title"><span>Contact Us</span></h1>
+        <form action="https://formsubmit.co/hello@detroitlens.com" method="POST">
+            <!-- FormSubmit honeypot field -->
+            <input type="text" name="_honey" style="display:none">
+            
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Specify redirect after submission -->
+            <input type="hidden" name="_next" value="https://detroitlens.com/thank-you">
+            
+            <!-- Name Field -->
+            <div>
+                <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            
+            <!-- Email Field -->
+            <div>
+                <input type="email" name="email" placeholder="Your email address" required>
+            </div>
+            
+            <!-- Message Field -->
+            <div>
+                <textarea name="message" placeholder="Your message" required></textarea>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">SEND MESSAGE</button>
+        </form>
     </div>
-
-    <!-- Email Field -->
-    <div>
-        <input type="email" name="email" placeholder="Your email address" required>
-    </div>
-
-    <!-- Message Field -->
-    <div>
-        <textarea name="message" placeholder="Your message" required></textarea>
-    </div>
-
-    <!-- Submit Button -->
-    <div>
-        <button type="submit">SUBMIT</button>
-    </div>
-</form>
+</body>
+</html>
