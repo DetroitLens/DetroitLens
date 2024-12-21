@@ -145,29 +145,29 @@
             z-index: 2;
             filter: brightness(1.2);
         }
+        
+  /* Honeycomb Gallery */
+.portfolio-section {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
 
-        /* Honeycomb Gallery */
-        .portfolio-section {
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-       .honeycomb {
+.honeycomb {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem;
-    gap: 0;
+    padding: 0;
+    gap: -10px;
 }
 
 .honeycomb-cell {
-    flex: 0 1 250px;
-    height: 275px;
-    margin: -20px 0;
+    flex: 0 1 220px;
+    height: 240px;
+    margin: -30px -15px;
     position: relative;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -175,39 +175,57 @@
     overflow: hidden;
 }
 
-.honeycomb-cell:nth-child(odd) {
-    margin-left: -30px;
-}
-
-.honeycomb-cell::after {
+/* Add glowing border */
+.honeycomb-cell::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(45deg, #00e5ff, #ff00ff, #ff8c00);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    pointer-events: none;
+    z-index: 1;
+    filter: blur(3px);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 }
 
-        .honeycomb-cell:hover {
-            transform: scale(1.05);
-            z-index: 2;
-            filter: brightness(1.1);
-        }
+.honeycomb-cell:hover::before {
+    opacity: 0.8;
+}
 
-        .honeycomb-cell img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+.honeycomb-cell img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 2;
+}
 
-        .honeycomb-cell:hover img {
-            transform: scale(1.1);
-        }
+.honeycomb-cell:nth-child(odd) {
+    margin-top: -45px;
+}
 
+.honeycomb-cell:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    filter: brightness(1.1);
+}
+
+.honeycomb-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.honeycomb-cell:hover img {
+    transform: scale(1.1);
+}
         /* Modal */
         .gallery-modal {
             display: none;
