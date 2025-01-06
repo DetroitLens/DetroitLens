@@ -146,78 +146,42 @@
             filter: brightness(1.2);
         }
         
-/* Honeycomb Gallery */
-.portfolio-section {
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
+        /* Gallery Section */
+        .portfolio-section {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
 
-.honeycomb {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0;
-}
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
 
-.honeycomb-cell {
-    width: 200px;
-    height: 220px;
-    position: relative;
-    margin: -20px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-.honeycomb-cell::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, 
-        rgba(0, 229, 255, 0.8),
-        rgba(255, 0, 255, 0.8),
-        rgba(255, 140, 0, 0.8)
-    );
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    filter: blur(2px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-.honeycomb-cell:hover::before {
-    opacity: 1;
-}
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
 
-.honeycomb-cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    position: relative;
-    z-index: 0;
-}
-
-/* Adjust positioning to create tight honeycomb pattern */
-.honeycomb-cell:nth-child(2n) {
-    transform: translateX(50%) translateY(-25%);
-}
-
-.honeycomb-cell:nth-child(4n) {
-    transform: translateX(-50%) translateY(-25%);
-}
-
-@media (max-width: 768px) {
-    .honeycomb-cell {
-        width: 150px;
-        height: 165px;
-        margin: -15px;
-    }
-}
         /* Modal */
         .gallery-modal {
             display: none;
@@ -348,15 +312,8 @@
 
         /* Mobile Optimizations */
         @media (max-width: 768px) {
-            .honeycomb-cell {
-                flex: 0 1 130px;
-                height: 145px;
-                margin: -10px; 0;
-            }
-            
-            .honeycomb {
-                padding: 1rem;
-                gap: 0;
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
 
             .notification-section {
@@ -379,240 +336,232 @@
 
     <!-- Hero Section -->
     <div class="hero-content">
-        <div class="glow-text" data-text="DETROIT LENS">
-            <span>DETROIT LENS</span>
-        </div>
-        <h2 style="color: white; font-size: 1.5rem; letter-spacing: 2px; margin: 20px 0; text-align: center;">
-            ELEVATE YOUR LISTINGS. <span style="background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00); -webkit-background-clip: text; background-clip: text; color: transparent;">AMPLIFY</span> YOUR BRAND.
-        </h2>
-        <a href="https://order-167822656.listvt.com" target="_blank" class="cta-button">Book Your Photo Shoot</a>
+    <div class="glow-text" data-text="DETROIT LENS">
+        <span>DETROIT LENS</span>
     </div>
-
-    <!-- FOMO Notifications -->
-    <div class="notification-section">
-        <div class="notification">
-            <div class="notification-icon">📸</div>
-            <div class="notification-content">
-                <div class="notification-title">Loading...</div>
-                <div class="notification-text">Initializing notifications...</div>
+    <h2 style="color: white; font-size: 1.5rem; letter-spacing: 2px; margin: 20px 0; text-align: center;">
+        ELEVATE YOUR LISTINGS. <span style="background: linear-gradient(90deg, #00e5ff, #ff00ff, #ff8c00); -webkit-background-clip: text; background-clip: text; color: transparent;">AMPLIFY</span> YOUR BRAND.
+    </h2>
+    <p style="color: white; font-size: 1rem; letter-spacing: 1px; margin: 10px 0; text-align: center;">
+        Transform your listings with stunning stills, aerial drone shots, immersive videos, 3D tours, captivating twilight photography, precise measured floorplans, and virtual staging.
+    </p>
+    <a href="https://order-167822656.listvt.com" target="_blank" class="cta-button">Book Your Photo Shoot</a>
+</div>
+  
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/GtNyT9fb/DJI-0007-v2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/hGg7dk2Q/DJI-0014-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/tRmPMm48/DJI-0398.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/Kv6TZkLN/DJI-0466.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/WbFrL6Dz/DJI-0579.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/xC1JsKD0/DJI-0715.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/KzpKCRxt/DJI-0817.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/jjXnQM1g/dji-0817-twilight.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/Fz2Ys8fR/DJI-0930.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/vT11ybZk/DJI-0964-twilight-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/qBYhLhmT/DJI-0979.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/ncDswF5Q/DSC00122-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/wjYtKK84/dsc02215-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/QMXHtpMp/DSC02225-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/Nj8KBNQs/dsc02270-3.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/VND5bdS2/DSC02290-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/0QjjGPDj/DSC03000.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/Rhn08dPz/DSC03260.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/50r0nTS3/DSC03448.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/YjKSwFVL/DSC03695.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/dQ7mwKpJ/DSC04171-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/ZY1PqMzp/DSC04218.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/sD7YG438/DSC04228.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/bwPQxSJv/dsc04644-3.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/CKLktybT/dsc06019-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/vmqfwPv1/DSC06062-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/7657HgBK/DSC06168-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/7h727qr7/DSC08336-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/MZjRgmfT/DSC08406-2.jpg" alt="Real Estate Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/Y9TFhhZM/DSC08828-2.jpg" alt="Real Estate Photo">
             </div>
         </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal">
+        <span class="gallery-modal-close">&times;</span>
+        <img class="gallery-modal-content" src="" alt="Full size image">
     </div>
-<!-- Portfolio Section -->
-<section class="portfolio-section">
-    <div class="honeycomb">
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/GtNyT9fb/DJI-0007-v2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/hGg7dk2Q/DJI-0014-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/tRmPMm48/DJI-0398.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/Kv6TZkLN/DJI-0466.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/WbFrL6Dz/DJI-0579.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/xC1JsKD0/DJI-0715.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/KzpKCRxt/DJI-0817.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/jjXnQM1g/dji-0817-twilight.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/Fz2Ys8fR/DJI-0930.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/vT11ybZk/DJI-0964-twilight-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/qBYhLhmT/DJI-0979.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/ncDswF5Q/DSC00122-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/wjYtKK84/dsc02215-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/QMXHtpMp/DSC02225-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/Nj8KBNQs/dsc02270-3.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/VND5bdS2/DSC02290-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/0QjjGPDj/DSC03000.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/Rhn08dPz/DSC03260.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/50r0nTS3/DSC03448.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/YjKSwFVL/DSC03695.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/dQ7mwKpJ/DSC04171-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/ZY1PqMzp/DSC04218.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/sD7YG438/DSC04228.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/bwPQxSJv/dsc04644-3.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/CKLktybT/dsc06019-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/vmqfwPv1/DSC06062-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/7657HgBK/DSC06168-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/7h727qr7/DSC08336-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/MZjRgmfT/DSC08406-2.jpg" alt="Real Estate Photo">
-        </div>
-        <div class="honeycomb-cell">
-            <img src="https://i.postimg.cc/Y9TFhhZM/DSC08828-2.jpg" alt="Real Estate Photo">
-        </div>
+
+    <!-- Bottom CTA -->
+    <div style="text-align: center; margin: 40px 0; position: relative; z-index: 1001;">
+        <a href="https://order-167822656.listvt.com" target="_blank" class="cta-button">Book Your Photo Shoot</a>
+        <a href="https://detroitlens.github.io/DetroitLens/ContactPage.html" class="cta-button">Contact Us</a>
     </div>
-</section>
 
-<!-- Gallery Modal -->
-<div class="gallery-modal">
-    <span class="gallery-modal-close">&times;</span>
-    <img class="gallery-modal-content" src="" alt="Full size image">
-</div>
+    <script>
+        // Gallery Modal Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.gallery-item');
+            const modal = document.querySelector('.gallery-modal');
+            const modalImg = document.querySelector('.gallery-modal-content');
+            const closeBtn = document.querySelector('.gallery-modal-close');
 
-<!-- Bottom CTA -->
-<div style="text-align: center; margin: 40px 0; position: relative; z-index: 1001;">
-    <a href="https://order-167822656.listvt.com" target="_blank" class="cta-button">Book Your Photo Shoot</a>
-    <a href="https://detroitlens.github.io/DetroitLens/ContactPage.html" class="cta-button">Contact Us</a>
-</div>
+            items.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    modal.classList.add('show');
+                    modalImg.src = img.src;
+                    document.body.style.overflow = 'hidden';
+                });
+            });
 
-<script>
-// Gallery Modal Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const cells = document.querySelectorAll('.honeycomb-cell');
-    const modal = document.querySelector('.gallery-modal');
-    const modalImg = document.querySelector('.gallery-modal-content');
-    const closeBtn = document.querySelector('.gallery-modal-close');
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            });
 
-    cells.forEach(cell => {
-        cell.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            modal.classList.add('show');
-            modalImg.src = img.src;
-            document.body.style.overflow = 'hidden';
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
         });
-    });
 
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    });
+        // FOMO Notifications System
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookingNotifications = [
+                {
+                    icon: "📸",
+                    title: "Premium Package",
+                    text: "Just booked in Birmingham - $485"
+                },
+                {
+                    icon: "📸",
+                    title: "Essential Package",
+                    text: "New shoot in Rochester Hills - $220"
+                },
+                {
+                    icon: "🏠",
+                    title: "Signature Package",
+                    text: "Luxury home in Bloomfield - $425"
+                },
+                {
+                    icon: "🚁",
+                    title: "Drone Add-on",
+                    text: "Aerial package in Troy - $70"
+                },
+                {
+                    icon: "🌙",
+                    title: "Twilight Shoot",
+                    text: "Evening session in Novi - $50"
+                }
+            ];
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
-        }
-    });
-});
+            const deliveryNotifications = [
+                {
+                    icon: "✨",
+                    title: "Photos Delivered",
+                    text: "24hr turnaround in Birmingham"
+                },
+                {
+                    icon: "✨",
+                    title: "Just Completed",
+                    text: "Luxury edit in Bloomfield Hills"
+                }
+            ];
 
-// FOMO Notifications System
-document.addEventListener('DOMContentLoaded', () => {
-    const bookingNotifications = [
-        {
-            icon: "📸",
-            title: "Premium Package",
-            text: "Just booked in Birmingham - $485"
-        },
-        {
-            icon: "📸",
-            title: "Essential Package",
-            text: "New shoot in Rochester Hills - $220"
-        },
-        {
-            icon: "🏠",
-            title: "Signature Package",
-            text: "Luxury home in Bloomfield - $425"
-        },
-        {
-            icon: "🚁",
-            title: "Drone Add-on",
-            text: "Aerial package in Troy - $70"
-        },
-        {
-            icon: "🌙",
-            title: "Twilight Shoot",
-            text: "Evening session in Novi - $50"
-        }
-    ];
+            const reviewNotifications = [
+                {
+                    icon: "⭐",
+                    title: "New 5-Star Review",
+                    text: "Perfect photos! - Sarah K."
+                },
+                {
+                    icon: "⭐",
+                    title: "Client Review",
+                    text: "Exceeded expectations! - Tom B."
+                }
+            ];
 
-    const deliveryNotifications = [
-        {
-            icon: "✨",
-            title: "Photos Delivered",
-            text: "24hr turnaround in Birmingham"
-        },
-        {
-            icon: "✨",
-            title: "Just Completed",
-            text: "Luxury edit in Bloomfield Hills"
-        }
-    ];
+            function getRandomNotification() {
+                const allNotifications = [...bookingNotifications, ...deliveryNotifications, ...reviewNotifications];
+                return allNotifications[Math.floor(Math.random() * allNotifications.length)];
+            }
 
-    const reviewNotifications = [
-        {
-            icon: "⭐",
-            title: "New 5-Star Review",
-            text: "Perfect photos! - Sarah K."
-        },
-        {
-            icon: "⭐",
-            title: "Client Review",
-            text: "Exceeded expectations! - Tom B."
-        }
-    ];
+            const notificationElement = document.querySelector('.notification');
 
-    function getRandomNotification() {
-        const allNotifications = [...bookingNotifications, ...deliveryNotifications, ...reviewNotifications];
-        return allNotifications[Math.floor(Math.random() * allNotifications.length)];
-    }
+            function updateNotification() {
+                const data = getRandomNotification();
+                notificationElement.querySelector('.notification-icon').textContent = data.icon;
+                notificationElement.querySelector('.notification-title').textContent = data.title;
+                notificationElement.querySelector('.notification-text').textContent = data.text;
+                notificationElement.style.animation = 'none';
+                notificationElement.offsetHeight;
+                notificationElement.style.animation = 'slideIn 10s linear';
+            }
 
-    const notificationElement = document.querySelector('.notification');
-
-    function updateNotification() {
-        const data = getRandomNotification();
-        notificationElement.querySelector('.notification-icon').textContent = data.icon;
-        notificationElement.querySelector('.notification-title').textContent = data.title;
-        notificationElement.querySelector('.notification-text').textContent = data.text;
-        notificationElement.style.animation = 'none';
-        notificationElement.offsetHeight;
-        notificationElement.style.animation = 'slideIn 10s linear';
-    }
-
-    updateNotification();
-    setInterval(updateNotification, 10000);
-});
-</script>
-
+            updateNotification();
+            setInterval(updateNotification, 10000);
+        });
+    </script>
 </body>
 </html>
